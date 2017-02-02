@@ -1,0 +1,103 @@
+@font-face {
+  font-family: Blockletter;
+  src: url("Blockletter.otf"); }
+
+#body-container {
+  height: 100vh;
+  padding: 0;
+  font-family: Blockletter; }
+  #body-container #nav {
+    height: 10%;
+    border: 1px solid black; }
+    #body-container #nav .nav-menu-link {
+      padding: 0;
+      height: 100%;
+      font-size: 3em;
+      text-align: center; }
+      #body-container #nav .nav-menu-link span {
+        padding: 0;
+        height: 100%; }
+      #body-container #nav .nav-menu-link :hover {
+        background: black;
+        color: white;
+        cursor: pointer; }
+  #body-container #content-container {
+    height: 90%;
+    border: 1px solid black;
+    /* HOME PAGE */
+    /*  */
+    /* ABOUT PAGE */
+    /*  */
+    /* About Text Section */ }
+    #body-container #content-container #home {
+      height: 100%; }
+      #body-container #content-container #home #main-logo {
+        position: relative;
+        top: 40%;
+        height: 41%; }
+    #body-container #content-container #about {
+      height: 100%;
+      /*  
+				Standard styles / EXP container
+			 */ }
+      #body-container #content-container #about #exp-container {
+        padding: 1%;
+        height: auto;
+        /* Individual styles */ }
+        #body-container #content-container #about #exp-container .exp-div {
+          margin: 1%;
+          font-size: 2em;
+          height: 100%;
+          border: 1px none;
+          width: 31%;
+          padding: 0; }
+          #body-container #content-container #about #exp-container .exp-div .exp-name {
+            font-size: 3em;
+            border-bottom: 3px solid black; }
+        #body-container #content-container #about #exp-container #Freelance .exp-date {
+          border-bottom: 3px solid black;
+          border-right: 3px solid black; }
+        #body-container #content-container #about #exp-container #Konditori {
+          text-align: center; }
+          #body-container #content-container #about #exp-container #Konditori .exp-date {
+            border-bottom: 3px solid black;
+            border-left: 3px solid black;
+            border-right: 3px solid black;
+            margin-left: 17%; }
+        #body-container #content-container #about #exp-container #CitiGroup {
+          text-align: right; }
+          #body-container #content-container #about #exp-container #CitiGroup .exp-date {
+            float: right;
+            border-bottom: 3px solid black;
+            border-left: 3px solid black; }
+    #body-container #content-container #about-text-container {
+      height: 49%; }
+      #body-container #content-container #about-text-container #skill-container {
+        font-size: 1em; }
+        #body-container #content-container #about-text-container #skill-container #skill-title {
+          border-bottom: 3px solid black;
+          font-size: 4em; }
+        #body-container #content-container #about-text-container #skill-container .skill .skilllvl {
+          height: 2vh;
+          padding: 0%;
+          margin: 1%; }
+          #body-container #content-container #about-text-container #skill-container .skill .skilllvl .lvlblk {
+            margin: 1%;
+            padding: 1%;
+            width: 5%; }
+          #body-container #content-container #about-text-container #skill-container .skill .skilllvl .lvlblack {
+            border: 1px solid black;
+            background: black; }
+          #body-container #content-container #about-text-container #skill-container .skill .skilllvl .lvlclear {
+            border: 1px solid black;
+            background: white; }
+      #body-container #content-container #about-text-container #about-text {
+        height: 60%;
+        position: relative;
+        top: 5%;
+        font-size: 2em; }
+        #body-container #content-container #about-text-container #about-text .inner-text {
+          border: 1px solid black; }
+        #body-container #content-container #about-text-container #about-text #about-picture {
+          height: 100%;
+          float: right; }

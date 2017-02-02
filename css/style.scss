@@ -1,5 +1,188 @@
-body {
-	background:green;
+@font-face {
+  font-family:Blockletter;
+  src:url('Blockletter.otf');
+}
 
+$messi : 'El Messiri', sans-serif;
+$marm : 'Marmelad',sans-serif;
+$prata : 'Prata',serif;
+$halant : 'Halant',serif; 
 
+#body-container{
+	height:100vh;
+	padding:0;
+	font-family:Blockletter;
+	#nav {
+		height:10%;
+		border:1px solid black;
+
+		.nav-menu-link {
+			padding:0;
+			
+			height:100%;
+			font-size:3em;
+			text-align:center;
+
+			span {
+				padding:0;
+				height:100%;
+			}
+
+			:hover{ 
+
+				background:black;
+				color:white;
+				cursor:pointer;
+				
+			}
+		}
+	}
+	#content-container{
+		height:90%;
+		border:1px solid black;
+		/* HOME PAGE */
+		#home {
+			height:100%;
+
+			#main-logo {
+				position:relative;
+				top:40%;
+				height:41%;
+			}
+		}
+		/*  */
+		/* ABOUT PAGE */
+		#about{
+		
+			height:100%;
+
+			/*  
+				Standard styles / EXP container
+			 */
+			#exp-container{
+				padding:1%;
+				height:auto;
+			
+				.exp-div {
+					margin:1%;
+					font-size:2em;
+					height:100%;
+					border:1px none;
+					width:31%;
+					padding:0;
+					.exp-name {
+						font-size:3em;
+						border-bottom:3px solid black;
+
+					}
+
+				}
+			
+
+				/* Individual styles */
+				#Freelance {
+						.exp-name {
+
+						}
+						.exp-date {
+							border-bottom:3px solid black;
+							
+							border-right:3px solid black;
+							
+						}
+				}
+
+				#Konditori {
+					text-align:center;
+						.exp-name {
+	
+						}
+						.exp-date {
+							border-bottom:3px solid black;
+							border-left:3px solid black;
+							border-right:3px solid black;
+							margin-left:17%;
+						}
+				}
+				#CitiGroup{
+					text-align:right;
+
+						.exp-date{
+							float:right;
+							border-bottom:3px solid black;
+							border-left:3px solid black;
+							
+						}
+
+				}
+			}
+		}
+		/*  */
+
+		/* About Text Section */
+
+		#about-text-container{
+			
+			height:49%;
+			#skill-container {
+				
+				font-size:1em;
+
+				#skill-title{
+					border-bottom:3px solid black;
+					font-size:4em;
+				}
+
+				.skill {
+					
+					
+
+					.skilllvl {
+						height:2vh;
+						padding:0%;
+						
+						margin:1%;
+
+						.lvlblk {
+							margin:1%;
+							padding:1%;
+							width:5%;
+						}
+
+						.lvlblack {
+							border:1px solid black;
+							
+							background:black;
+
+						}
+						.lvlclear {
+							border:1px solid black;
+							
+							background:white;
+						}
+					}
+				}
+			}
+			#about-text {
+				
+				height:60%;
+				position:relative;
+				top:5%;
+				font-size:2em;
+
+				.inner-text {
+					border:1px solid black;
+				}
+
+				#about-picture{
+					
+					height:100%;
+					float:right;
+					
+					
+
+				}
+			}
+		}
+	}
 }
