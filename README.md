@@ -1,13 +1,8 @@
-
-This is a boilerplate for someone who wants to use 
-pure javascript with webpack as the task runner.
+Redoing my home page in vanilla JS
 
 
-Simply git clone, and npm install. 
-Does have react in the package.json incase you want to mess around with that.
+Right now it's using a fake router. I still gotta make a proper one to deal
+
+with the URL changes. ...I'll work on that later.
 
 
-"Npm start" to start webpack's dev server on localhost:8080 
-
-
-CSS, SCSS, SASS available, just include them into your index or js file.
