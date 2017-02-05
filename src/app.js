@@ -27,6 +27,8 @@ function changelink(num){
 		...for now
 */
 
+var linknum = 2;
+
 function navmenu(){
 
 	/*
@@ -38,7 +40,7 @@ function navmenu(){
 	/*
 		For indexing
 	*/
-	var linknum = 0;
+	
 
 	/*
 		Links for routing... 
@@ -48,9 +50,9 @@ function navmenu(){
 	
 	*/
 	var links = [
-		{"name":"About","web":"/about"},
+		{"name":"About","web":"/#/about"},
 		{"name":"Home","web":"/"},
-		{"name":"Projects","web":"/projects"}
+		{"name":"Projects","web":"/#/projects"}
 	];
 
 
@@ -64,15 +66,19 @@ function navmenu(){
 		/*
 			Create the div element
 		*/
-		
+
 		var divlink = document.createElement('div');
 		
 		/*
 			Set the id and class attributes here, along with the linkid
 		*/
-		divlink.setAttribute('class',link.name);
+		divlink.setAttribute('id',link.name);
 		divlink.setAttribute('class','col-xs-4 col-sm-4 col-md-4 col-lg-4 nav-menu-link');
 		divlink.setAttribute('linkid',i);
+
+		/*if(i == linknum) {
+			divlink.setAttribute('')	
+		}*/
 		
 		/*   
 			Set the template for the text inside the div.
@@ -86,10 +92,17 @@ function navmenu(){
 		*/
 		divlink.addEventListener('click',function(event){
 			event.preventDefault();
+			let stuff = document.querySelectorAll('.nav-menu-link');
+
+			for(var z=0;z<stuff.length;z++){
+				stuff[z].setAttribute('class','col-xs-4 col-sm-4 col-md-4 col-lg-4 nav-menu-link');
+			}
+
 			var id = this.getAttribute('linkid');
+			this.setAttribute('class','col-xs-4 col-sm-4 col-md-4 col-lg-4 nav-menu-link highlight');
 			console.log(id);
 			linknum = id;
-			
+			console.log(linknum);
 			changelink(linknum);
 			return linknum;
 		},false);
@@ -284,7 +297,7 @@ function AboutPage(){
 			};
 		}
 		
-		var skillname = new divCreate(null,'col-xs-12 col-sm-12 col-md-12 col-lg-12 skillname');
+		var skillname = new divCreate(null,'col-xs-12 col-sm-12 col-md-12 col-lg-12 skillnames');
 		skillname.innerHTML = skill.name;
 
 		div.append(skillname,lvl);
@@ -324,8 +337,118 @@ function AboutPage(){
 */
 
 function ProjectPage(){
+	var container = new divCreate('projects','col-xs-12 col-sm-12 col-md-12 col-lg-12');
 
-}
+	var projects = [
+   				{
+   				'name':'Guitar Tools',
+   				'web':'http://guitar.thebigoh.net',
+   				'framework':'AngularJS',
+   				'img':'http://i.imgur.com/3VPN6nK.jpg?1',
+   				'descs':['A couple of web apps I made to help guitarists, beginner and experts, unlock the secrets of the fretboard',
+   						'One web app is a virtual fretboard which a guitarist can custom tune to any tuning they choose and select a scale or chord in relative to that tuning',
+   						'The other web app is a mapping of all the possible harmonic sweet spots, something that Eddie Van Halen would be very mad about.'],				
+   				'done':true
+   				},
+   				{
+   				'name':'Not a PokeDex',
+   				'web':'http://notpokeDex.thebigoh.net',
+   				 'framework':'AngularJS',
+   				 'img':'http://i.imgur.com/Vs3r5Jm.png?1',
+   				 'descs':['...Yeah, I made a pokeDex.',
+   				 		  'Tried to make it look like it came from one of the games, currently does not display the most recent generation of pokemon',
+   						  'I wanted to manipulate big data with tons of relations, except without staring at lots of numbers and random names. The images are not owned by me.'],
+   				 'done':false
+   				},
+   				{
+   				'name':'Mock travel website',
+   				'web':'http://elsy2.thebigoh.net',
+   				'framework':'AngularJS',
+   				'img':'http://i.imgur.com/cnvN0DR.png?1',
+   				'descs':['Guilt tripped into making a site for my mom.',
+   						 'Not responsive at the moment',
+   						 'Made with a NodeJS backend to handle management of project']
+   				},
+   				{
+   				'name':'AtaByte Hosting',
+   				'web':'http://jared2.theBigOh.net',
+   				'framework':'AngularJS',
+   				'img':'http://i.imgur.com/jkVu7mh.jpg?1',
+   				'descs':['Doing a layout for my friend\'s webhosting company',
+   						 'Fully responsive in different displays.',
+   						 'Made in AngularJS which made it a breeze',],
+   				'done':true
+   				},
+        		{
+        		'name':'Coding Blog',
+        		'web':'http://blog.theBigOh.net',
+        		'framework':'MEAN',
+        		'img':'http://i.imgur.com/n2XT1Kp.png?1',
+        		'descs':['Personal blog where I either talk about what I\'m coding or what I\'m being distracted by',
+        				 'AngularJS for the front-end',
+        				 'Made with NodeJS/ExpressJS for the back-end',],
+        		'done':true
+        		},
+       			{
+       			'name':'Vega Built Gaming',
+       			'web':'http://vegaBuild.thebigoh.net',
+         		'framework':'AngularJS/MEAN',
+         		'img':'http://i.imgur.com/QE8pSFd.png',
+         		'descs':['A website for a friend\'s custom PC company',
+                         'Built under a MEAN stack',
+                          'Logo design made by me.'],
+         		'done':true
+         		},
+   		];
+
+
+   		let linknum = 0; 
+
+   		var imageContainer = new divCreate('image-container','col-xs-12 col-sm-12 col-md-12 col-lg-12');
+
+   		var projectSelect = new divCreate('project-select','col-xs-12 col-sm-12 col-md-12 col-lg-12');
+   		var projectSelectContainer = new divCreate('project-select-container','col-xs-12 col-sm-12 col-md-12 col-lg-12');
+
+   		var projectDetails = new divCreate('project-details','col-xs-12 col-sm-12 col-md-4 col-lg-4');
+   		var projectDetailss = new divCreate('project-detailss','col-xs-12 col-sm-12 col-md-4 col-lg-4');
+
+   		var projectContainer = new divCreate('project-container','col-xs-12 col-sm-12 col-md-12 col-lg-12');
+
+   		for(var proj in projects){
+   			var project = projects[proj];
+
+   			var projectDisplay = new divCreate('project'+proj,'col-xs-12 col-sm-12 col-md-2 col-lg-2 project-display');
+
+   			projectDisplay.style.cssText = `background:url(${project.img})no-repeat;background-size:80% 80%;background-position:center;`;
+
+   			projectDisplay.addEventListener('mouseenter',function(){
+   				this.style.backgroundSize = '120% 120%';
+   			})
+   			projectDisplay.addEventListener('mouseleave',function(){
+   				this.style.backgroundSize = '80% 80%';
+   			})
+
+
+   			projectSelectContainer.append(projectDisplay);
+
+   		}
+
+
+   		
+
+   		imageContainer.style.cssText = `background:url(${projects[linknum].img})no-repeat;background-size:100% 100%;background-position:center;`;
+
+
+
+
+   		projectSelect.append(projectSelectContainer);
+
+   		projectContainer.append(projectDetails, projectSelect,projectDetailss);
+   		imageContainer.append(projectContainer);
+   		container.append(imageContainer);
+
+	return container;
+};
 
 
 var body = document.querySelector('body');
@@ -336,9 +459,9 @@ bodycon.append(navmenu(),container);
 
 body.append(bodycon);
 
-var bodycontent = [HomePage(),AboutPage()];
+var bodycontent = [HomePage(),AboutPage(),ProjectPage()];
 
-container.appendChild(bodycontent[1]);
+container.append(bodycontent[linknum]);
 
 
 
