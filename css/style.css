@@ -2,54 +2,73 @@
   font-family: Blockletter;
   src: url("Blockletter.otf"); }
 
+/* Colors */
+/* Style switches */
 .highlight {
-  background: black;
-  color: white; }
+  background: #252529;
+  color: #81818A; }
 
+/* Actual DOM --- large screens 1920x1080  */
 #body-container {
   height: 100vh;
   padding: 0;
-  font-family: Blockletter; }
+  font-family: Blockletter;
+  background: #252529; }
   #body-container #nav {
     height: 10%;
-    border-bottom: 3px solid black;
     padding: 0;
-    background: white; }
+    color: #D6D6D6;
+    background: #252529; }
     #body-container #nav .nav-menu-link {
       padding: 0;
       height: 100%;
       font-size: 3em;
-      text-align: center; }
+      text-align: center;
+      border-bottom: 3px solid black; }
       #body-container #nav .nav-menu-link span {
         padding: 0;
         height: 100%; }
       #body-container #nav .nav-menu-link :hover {
-        background: black;
-        color: white;
+        background: #D6D6D6;
+        color: #81818A;
         cursor: pointer; }
   #body-container #content-container {
     height: 90%;
     overflow: auto;
+    padding: 0;
     /* HOME PAGE */
     /*  */
     /* ABOUT PAGE */
-    /*  */
-    /* Projects Page */ }
+    /* End of About Page */
+    /* Projects Page */
+    /* End of Projects Page */ }
     #body-container #content-container #home {
-      height: 100%; }
+      height: 100%;
+      position: sticky;
+      padding: 0; }
+      #body-container #content-container #home #bg-container {
+        height: 100%;
+        padding: 0; }
       #body-container #content-container #home #main-logo {
-        position: relative;
-        top: 40%;
-        height: 41%; }
+        height: 100%;
+        font-size: 8em;
+        color: #81818A;
+        padding: 0; }
+        #body-container #content-container #home #main-logo #brand-text {
+          float: right;
+          position: relative;
+          top: 80%;
+          text-align: right; }
     #body-container #content-container #about {
       height: 100%;
+      background: #252529;
       /*  
 				Standard styles / EXP container
 			 */
       /* About Text Section */ }
       #body-container #content-container #about #exp-container {
         padding: 1%;
-        height: auto;
+        height: 50%;
         /* Individual styles */ }
         #body-container #content-container #about #exp-container .exp-div {
           margin: 1%;
@@ -57,22 +76,31 @@
           height: 100%;
           border: 1px none;
           width: 31%;
-          padding: 0; }
+          background: #6F6F6F;
+          padding: 1%; }
           #body-container #content-container #about #exp-container .exp-div .exp-name {
             font-size: 3em;
             border-bottom: 3px solid black; }
-        #body-container #content-container #about #exp-container #Freelance .exp-date {
-          border-bottom: 3px solid black;
-          border-right: 3px solid black; }
+        #body-container #content-container #about #exp-container #Freelance {
+          border-right: 4px solid black;
+          height: 100%; }
+          #body-container #content-container #about #exp-container #Freelance .exp-date {
+            border-bottom: 3px solid black;
+            border-right: 3px solid black; }
         #body-container #content-container #about #exp-container #Konditori {
-          text-align: center; }
+          text-align: center;
+          border-right: 4px solid black;
+          border-left: 4px solid black;
+          height: 100%; }
           #body-container #content-container #about #exp-container #Konditori .exp-date {
             border-bottom: 3px solid black;
             border-left: 3px solid black;
             border-right: 3px solid black;
             margin-left: 17%; }
         #body-container #content-container #about #exp-container #CitiGroup {
-          text-align: right; }
+          text-align: right;
+          border-left: 4px solid black;
+          height: 100%; }
           #body-container #content-container #about #exp-container #CitiGroup .exp-date {
             float: right;
             border-bottom: 3px solid black;
@@ -80,10 +108,12 @@
       #body-container #content-container #about #about-text-container {
         height: 49%; }
         #body-container #content-container #about #about-text-container #skill-container {
-          font-size: 1em; }
+          background: #6F6F6F;
+          font-size: 1em;
+          margin: 1%; }
           #body-container #content-container #about #about-text-container #skill-container #skill-title {
             border-bottom: 3px solid black;
-            font-size: 4em; }
+            font-size: 3em; }
           #body-container #content-container #about #about-text-container #skill-container .skill .skilllvl {
             height: 2vh;
             padding: 0%;
@@ -93,18 +123,109 @@
               padding: 1%;
               width: 5%; }
             #body-container #content-container #about #about-text-container #skill-container .skill .skilllvl .lvlblack {
-              border: 1px solid black;
+              border: 3px solid black;
               background: black; }
             #body-container #content-container #about #about-text-container #skill-container .skill .skilllvl .lvlclear {
-              border: 1px solid black;
-              background: white; }
+              border: 3px solid black;
+              background: #6F6F6F; }
         #body-container #content-container #about #about-text-container #about-text {
           height: 60%;
           position: relative;
           top: 5%;
-          font-size: 2em; }
+          font-size: 2em;
+          background: #6F6F6F;
+          float: right;
+          margin: 2%;
+          padding: 0; }
           #body-container #content-container #about #about-text-container #about-text #about-picture {
             height: 100%;
             float: right; }
     #body-container #content-container #projects {
-      height: 100%; }
+      height: 100%;
+      padding: 0; }
+      #body-container #content-container #projects #image-container {
+        height: 100%;
+        padding: 0; }
+        #body-container #content-container #projects #image-container #project-container {
+          border: 1px solid black;
+          padding: 0;
+          position: relative;
+          height: 100%; }
+          #body-container #content-container #projects #image-container #project-container #project-details {
+            border-bottom: 4px solid black;
+            border-right: 4px solid black;
+            height: 30%;
+            margin-top: 1%;
+            margin-bottom: 2%;
+            background: #252529;
+            color: #D6D6D6; }
+            #body-container #content-container #projects #image-container #project-container #project-details #project-name {
+              font-size: 1em;
+              text-align: right; }
+              #body-container #content-container #projects #image-container #project-container #project-details #project-name .projects-name {
+                font-size: 2em;
+                text-align: left;
+                border-bottom: 3px solid #D6D6D6; }
+              #body-container #content-container #projects #image-container #project-container #project-details #project-name .projects-framework {
+                text-align: right;
+                font-size: 1.5em;
+                background: #D6D6D6;
+                color: #252529;
+                padding: 0; }
+              #body-container #content-container #projects #image-container #project-container #project-details #project-name .projects-link {
+                color: #D6D6D6;
+                font-size: 1.5em;
+                padding: 0; }
+                #body-container #content-container #projects #image-container #project-container #project-details #project-name .projects-link:hover {
+                  background: #D6D6D6;
+                  color: #252529; }
+            #body-container #content-container #projects #image-container #project-container #project-details .projects-desc {
+              padding: 0;
+              font-size: 1.2em; }
+              #body-container #content-container #projects #image-container #project-container #project-details .projects-desc .project-desc-list {
+                margin: 0.25%; }
+          #body-container #content-container #projects #image-container #project-container #project-select {
+            position: relative;
+            height: 28%;
+            padding-top: 3%;
+            padding-left: 0%;
+            padding-right: 0%; }
+            #body-container #content-container #projects #image-container #project-container #project-select #project-select-container {
+              height: 70%;
+              background: #252529;
+              border-top: 2px solid black;
+              border-bottom: 5px solid black; }
+              #body-container #content-container #projects #image-container #project-container #project-select #project-select-container .project-display {
+                height: 100%; }
+          #body-container #content-container #projects #image-container #project-container #project-detailss {
+            border: 1px solid black;
+            height: 30%;
+            float: right;
+            margin-top: 19%;
+            background: #252529;
+            color: #D6D6D6; }
+            #body-container #content-container #projects #image-container #project-container #project-detailss #project-name {
+              font-size: 1em;
+              text-align: right; }
+              #body-container #content-container #projects #image-container #project-container #project-detailss #project-name .projects-name {
+                font-size: 2em;
+                text-align: left;
+                border-bottom: 3px solid #D6D6D6; }
+              #body-container #content-container #projects #image-container #project-container #project-detailss #project-name .projects-framework {
+                text-align: right;
+                font-size: 1.5em;
+                background: #D6D6D6;
+                color: #252529;
+                padding: 0; }
+              #body-container #content-container #projects #image-container #project-container #project-detailss #project-name .projects-link {
+                color: #D6D6D6;
+                font-size: 1.5em;
+                padding: 0; }
+                #body-container #content-container #projects #image-container #project-container #project-detailss #project-name .projects-link:hover {
+                  background: #D6D6D6;
+                  color: #252529; }
+            #body-container #content-container #projects #image-container #project-container #project-detailss .projects-desc {
+              padding: 0;
+              font-size: 1.2em; }
+              #body-container #content-container #projects #image-container #project-container #project-detailss .projects-desc .project-desc-list {
+                margin: 0.25%; }

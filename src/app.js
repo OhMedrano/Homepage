@@ -1,5 +1,6 @@
 import '../css/style.scss';
 
+var win = window;
 
 function divCreate(id,nameclass){
  	
@@ -125,20 +126,38 @@ console.log(window.location);
 	Home / Splash page
 */
 
+var parallaxPosition = 0;
+
 function HomePage(){
-	
-	var container = new divCreate('home','col-xs-12 col-sm-12 col-md-12 col-lg-12');
+	var bgSize = 120;
+
+	var something = 0;
+
+
+
+
+	var container = new divCreate('home','col-xs-12 col-sm-12 col-md-12 col-lg-12 parallax');
 
 	var mainbrand = new divCreate('main-logo','col-xs-12 col-sm-12 col-md-12 col-lg-12');
-	mainbrand.style.cssText = 'background:url(../images/mainLogo.svg)no-repeat;background-size:100%100%;background-position:center;';
+	var brandText = new divCreate('brand-text','col-xs-12 col-sm-12 col-md-6 col-lg-6');
 
+	brandText.innerHTML = 'THE BIG OH';
+
+	var bgContainer = new divCreate('bg-container','col-xs-12 col-sm-12 col-md-12 col-lg-12');
+
+	bgContainer.style.cssText = 'background:url(../images/stylizedBWBG1.png)no-repeat;background-size:140%140%;background-position:center;position:fixed;';
+
+
+
+
+	mainbrand.append(brandText);
+	container.append(bgContainer,mainbrand);
+		
 	
 
+		
 
 
-
-
-	container.append(mainbrand);
 
 	return container;
 	
@@ -447,7 +466,7 @@ function ProjectPage(){
    			return div
    		}
 
-   		projectDetails.append(projectInfo(linknum),projectDesc(linknum));
+   		projectDetailss.append(projectInfo(linknum),projectDesc(linknum));
    		for(var i = 0; i < projects.length;i++){
    			var project = projects[i];
    			var id = i;
@@ -476,8 +495,8 @@ function ProjectPage(){
    				
    		
 
-   				projectDetails.innerHTML = '';
-   				projectDetails.append(projectInfo(linknum),projectDesc(linknum));
+   				projectDetailss.innerHTML = '';
+   				projectDetailss.append(projectInfo(linknum),projectDesc(linknum));
 	   		imageContainer.style.cssText = `background:url(${projects[linknum].img})no-repeat;background-size:100% 100%;background-position:center;`;
 
    				
@@ -498,12 +517,17 @@ function ProjectPage(){
 
    		projectSelect.append(projectSelectContainer);
 
-   		projectContainer.append(projectDetails, projectSelect,projectDetailss);
+   		projectContainer.append( projectDetailss,projectSelect);
    		imageContainer.append(projectContainer);
    		container.append(imageContainer);
 
 	return container;
 };
+
+
+/*Parallax function*/
+
+
 
 
 var body = document.querySelector('body');
@@ -519,5 +543,16 @@ var bodycontent = [HomePage(),AboutPage(),ProjectPage()];
 container.append(HomePage(),AboutPage(),ProjectPage());
 
 
-
-
+var parallax= document.querySelector(".parallax");
+window.onload = function(){
+	container.addEventListener("scroll", function() {
+    var scrolledHeight= window.pageYOffset,
+    limit= parallax.offsetTop+ parallax.offsetHeight;
+    if(scrolledHeight > parallax.offsetTop && scrolledHeight <= limit) {
+        parallax.style.backgroundPositionY= (scrolledHeight - parallax.offsetTop) /1.5+ "px";
+    } 
+    else {
+        parallax.style.backgroundPositionY= "0";
+    }
+});
+}
