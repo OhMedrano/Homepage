@@ -132,6 +132,8 @@ function HomePage(){
 	var mainbrand = new divCreate('main-logo','col-xs-12 col-sm-12 col-md-12 col-lg-12');
 	mainbrand.style.cssText = 'background:url(../images/mainLogo.svg)no-repeat;background-size:100%100%;background-position:center;';
 
+	
+
 
 
 
@@ -309,7 +311,7 @@ function AboutPage(){
 
 	
 
-	var aboutText = new divCreate('about-text','col-xs-12 col-sm-12 col-md-9 col-lg-9');
+	var aboutText = new divCreate('about-text','col-xs-12 col-sm-12 col-md-8 col-lg-8');
 
 	var text = `<span class="col-xs-12 col-sm-12 col-md-4 col-lg-4 inner-text">My name is Oscar. <br>I play guitar, can code, <br>and been known to eat a lot.</span>`;
 
@@ -401,6 +403,11 @@ function ProjectPage(){
          		},
    		];
 
+   		function changeProject(num){
+			linknum = num;
+			return linknum;
+
+		}
 
    		let linknum = 0; 
 
@@ -414,11 +421,44 @@ function ProjectPage(){
 
    		var projectContainer = new divCreate('project-container','col-xs-12 col-sm-12 col-md-12 col-lg-12');
 
-   		for(var proj in projects){
-   			var project = projects[proj];
+   		var  projectInfo = function(num){
+   				var projectInfoo = new divCreate('project-name','col-xs-12 col-sm-12 col-md-12 col-lg-12');
+   					projectInfoo.innerHTML = '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 projects-name">'
+   								 +projects[num].name
+   								 +'</div><div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 projects-framework">Made on '
+   								 +projects[num].framework
+   								 +'</div><a class="col-xs-12 col-sm-12 col-md-6 col-lg-6 projects-link"href="'
+   								 +projects[num].web
+   								 +'">Link here</a>';
 
-   			var projectDisplay = new divCreate('project'+proj,'col-xs-12 col-sm-12 col-md-2 col-lg-2 project-display');
+   					return projectInfoo;
+   		}
 
+   		var projectDesc = function(num){
+   			var div = new divCreate('project-desc'+num,'col-xs-12 col-sm-12 col-md-12 col-lg-12 projects-desc');
+
+   			for(var i=0;i<projects[num].descs.length;i++){
+   				var descsDiv = new divCreate('project-desc'+num,'col-xs-12 col-sm-12 col-md-12 col-lg-12 project-desc-list');
+   				descsDiv.innerHTML = projects[num].descs[i];
+
+   				div.append(descsDiv);
+   			}
+
+   			return div
+   		}
+
+   		projectDetails.append(projectInfo(linknum),projectDesc(linknum));
+   		for(var i = 0; i < projects.length;i++){
+   			var project = projects[i];
+   			var id = i;
+
+   			
+
+   			
+
+
+   			var projectDisplay = new divCreate('project'+i,'col-xs-12 col-sm-12 col-md-2 col-lg-2 project-display');
+   			projectDisplay.setAttribute('projectId',i);
    			projectDisplay.style.cssText = `background:url(${project.img})no-repeat;background-size:80% 80%;background-position:center;`;
 
    			projectDisplay.addEventListener('mouseenter',function(){
@@ -428,8 +468,23 @@ function ProjectPage(){
    				this.style.backgroundSize = '80% 80%';
    			})
 
+   			projectDisplay.addEventListener('click',function(){
+   				var stuff = this.getAttribute('projectId');
+   				changeProject(stuff);
+   				console.log(linknum);
 
+   				
+   		
+
+   				projectDetails.innerHTML = '';
+   				projectDetails.append(projectInfo(linknum),projectDesc(linknum));
+	   		imageContainer.style.cssText = `background:url(${projects[linknum].img})no-repeat;background-size:100% 100%;background-position:center;`;
+
+   				
+   			});
+   			
    			projectSelectContainer.append(projectDisplay);
+
 
    		}
 
@@ -461,7 +516,7 @@ body.append(bodycon);
 
 var bodycontent = [HomePage(),AboutPage(),ProjectPage()];
 
-container.append(bodycontent[linknum]);
+container.append(HomePage(),AboutPage(),ProjectPage());
 
 
 
