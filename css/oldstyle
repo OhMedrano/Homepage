@@ -1,0 +1,439 @@
+@font-face {
+  font-family:Blockletter;
+  src:url('Blockletter.otf');
+}
+
+/* Colors */
+
+$lightWhite: #D6D6D6;
+$darkWhite: #81818A;
+$darkBlack: #252529;
+$lightBlack: #6F6F6F;
+
+
+
+/* Style switches */
+.highlight {
+		background:$darkBlack;
+				color:$darkWhite;
+}
+
+
+/* Actual DOM --- large screens 1920x1080  */
+#body-container{
+	height:100vh;
+	padding:0;
+	font-family:Blockletter;
+	background:$darkBlack;
+	perspective:1px;
+	overflow-x:hidden;
+	overflow-y:auto;
+	#nav {
+		height:10%;
+	
+		padding:0;
+		color:$lightWhite;
+		background:$darkBlack;
+		position:fixed;
+		z-index:10;
+
+		.nav-menu-link {
+			padding:0;
+			
+			height:100%;
+			font-size:3em;
+			text-align:center;
+			border-bottom:3px solid black;
+
+			span {
+				padding:0;
+				height:100%;
+			}
+
+			:hover{ 
+
+				background:$lightWhite;
+				color:$darkWhite;
+				cursor:pointer;
+				
+			}
+		}
+	}
+	#content-container{
+		height:100%;
+		overflow:auto;
+		padding:0;
+		overflow-x:hidden;
+		/* HOME PAGE */
+		#home {
+			height:100%;
+			position:sticky;
+			padding:0;
+
+			#bg-container{
+				height:80%;
+				padding:0;
+				position:absolute;
+				z-index:2;
+				transform-style:preserve-3d;
+				overflow-x:hidden;
+				overflow-y:auto;
+				perspective:700px; 
+				width:101%;
+
+				#houston-base{
+					height:100%;
+					position:relative;
+					transform:translateZ(-1px) scale(1);
+				}
+				#houston-para1{
+					transform:translateZ(-819px) scale(2);
+					height:100%;
+				}
+				#houston-para2{
+					transform:translateZ(-1608px) scale(3)
+				}
+				#houston-para3{
+					transform:translateZ(-2392px) translateY(44px) scale(4);
+				}
+				#houston-para4{
+					transform:translateZ(-3166px) translateY(44px) scale(5);
+				}
+				.houston-parallax-stuff {
+					position:absolute;
+					top:0;
+					right:0;
+					left:0;
+					bottom:0;
+					height:100%;
+				}
+			}
+			#main-logo {
+				
+				position:sticky;
+				
+				height:100%;
+				font-size:8em;
+				color:$darkWhite;
+				padding:0;
+				top:0px;
+
+				#brand-text {
+					float:right;
+					position:relative;
+					top:80%;
+					text-align:right;
+				}
+				
+			}
+		}
+		/*  */
+		/* ABOUT PAGE */
+		#about{
+		
+			height:100%;
+			background:$darkBlack;
+
+			/*  
+				Standard styles / EXP container
+			 */
+			#exp-container{
+				padding:1%;
+				height:50%;
+			
+				.exp-div {
+					margin:1%;
+					font-size:2em;
+					height:100%;
+					border:1px none;
+					width:31%;
+					background:$lightBlack;
+					padding:1%;
+					.exp-name {
+						font-size:3em;
+						border-bottom:3px solid black;
+
+					}
+
+				}
+			
+
+				/* Individual styles */
+				#Freelance {
+					border-right:4px solid black;
+					height:100%;
+
+					
+						.exp-name {
+
+						}
+						.exp-date {
+							border-bottom:3px solid black;
+							
+							border-right:3px solid black;
+							
+						}
+				}
+
+				#Konditori {
+					text-align:center;
+					border-right:4px solid black;
+					border-left:4px solid black;
+					height:100%;
+					
+						.exp-name {
+	
+						}
+						.exp-date {
+							border-bottom:3px solid black;
+							border-left:3px solid black;
+							border-right:3px solid black;
+							margin-left:17%;
+						}
+				}
+				#CitiGroup{
+					text-align:right;
+					border-left:4px solid black;
+					height:100%;
+
+
+						.exp-date{
+							float:right;
+							border-bottom:3px solid black;
+							border-left:3px solid black;
+							
+						}
+
+				}
+			}
+
+			/* About Text Section */
+
+			#about-text-container{
+			
+				height:49%;
+				#skill-container {
+					background:$lightBlack;
+					font-size:1em;
+					margin:1%;
+					#skill-title{
+						border-bottom:3px solid black;
+						font-size:3em;
+					}
+
+					.skill {
+					
+					
+
+						.skilllvl {
+							height:2vh;
+							padding:0%;
+						
+							margin:1%;
+
+							.lvlblk {
+								margin:1%;
+								padding:1%;
+								width:5%;
+							}
+
+							.lvlblack {
+								border:3px solid black;
+							
+								background:black;
+
+							}
+							.lvlclear {
+								border:3px solid black;
+							
+								background:$lightBlack;
+							}
+						}
+					}
+				}
+				#about-text {
+				
+					height:60%;
+					position:relative;
+					top:5%;
+					font-size:2em;
+					background:$lightBlack;
+					float:right;
+					margin:2%;
+					padding:0;
+					.inner-text {
+					
+					}
+
+					#about-picture{
+					
+						height:100%;
+						float:right;
+					
+					
+
+					}
+				}
+			}
+		}
+		/* End of About Page */
+
+		/* Projects Page */
+
+		#projects {
+			height:100%;
+			padding:0;
+
+
+			#image-container {
+				height:100%;
+				padding:0;
+
+					#project-container {
+						border:1px solid black;
+						padding:0;
+						position:relative;
+						height:100%;
+
+						#project-details {
+							border-bottom:4px solid black;
+							border-right:4px solid black;
+							height:30%;
+							margin-top:1%;
+							margin-bottom:2%;
+							
+							background:$darkBlack;
+
+
+							color:$lightWhite;
+
+
+
+							#project-name{
+								font-size:1em;
+								text-align:right;
+
+								.projects-name {
+									font-size:2em;
+									text-align:left;
+									border-bottom:3px solid $lightWhite;
+								}
+								.projects-framework {
+									text-align:right;
+									font-size:1.5em;
+									background:$lightWhite;
+									color:$darkBlack;
+									padding:0;
+
+								}
+								.projects-link{
+									color:$lightWhite;
+									font-size:1.5em;
+									padding:0;
+
+									&:hover{
+										background:$lightWhite;
+										color:$darkBlack;
+									}
+								}
+							}
+
+							.projects-desc {
+								
+								
+								padding:0;
+								font-size:1.2em;
+								.project-desc-list{
+									margin:0.25%;
+								}
+							}
+						}
+						#project-select {
+							position:relative;
+
+							height:28%;
+							
+							padding-top:3%;
+							padding-left:0%;
+							padding-right:0%;
+
+							#project-select-container {
+								
+								height:70%;
+								background:$darkBlack;
+								border-top:2px solid black;
+								border-bottom:5px solid black;
+
+								.project-display {
+									height:100%;
+									cursor:pointer;
+
+									&:hover{
+										border:10px solid $lightWhite;
+									}
+								}
+
+							}
+						}
+						#project-detailss {
+							
+							height:30%;
+							float:right;
+						
+							margin-top:19%;
+							
+							background:$darkBlack;
+
+
+							color:$lightWhite;
+
+
+
+							#project-name{
+								font-size:1em;
+								text-align:right;
+
+								.projects-name {
+									font-size:2em;
+									text-align:left;
+									border-bottom:3px solid $lightWhite;
+								}
+								.projects-framework {
+									text-align:right;
+									font-size:1.5em;
+									background:$lightWhite;
+									color:$darkBlack;
+									padding:0;
+
+								}
+								.projects-link{
+									color:$lightWhite;
+									font-size:1.5em;
+									padding:0;
+
+									&:hover{
+										background:$lightWhite;
+										color:$darkBlack;
+									}
+								}
+							}
+
+							.projects-desc {
+								
+								
+								padding:0;
+								font-size:1.2em;
+								.project-desc-list{
+									margin:0.25%;
+								}
+							}
+						}
+					}				
+
+			}
+
+		}
+		/* End of Projects Page */
+
+	}
+}

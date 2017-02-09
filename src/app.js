@@ -1,7 +1,9 @@
 import '../css/style.scss';
 
 var win = window;
-
+/*
+	Creator functions
+*/
 function divCreate(id,nameclass){
  	
  	let div = document.createElement('div');
@@ -12,6 +14,42 @@ function divCreate(id,nameclass){
  	return div
  };
 
+
+function preloadPics(picURL,callback){
+	var loaded = 0,
+		loadedImages = [];
+
+	for(var i = 0; i<picURL.length;i++){
+		(function(img,src){
+			img.onload = function(){
+				if(++loaded == picURL.length && callback){
+					callback();
+				}
+			};
+
+			img.onerror = function() {
+
+			};
+			img.onabout = function() {
+
+			};
+
+			img.src = src;
+
+			loadedImages.push(img);
+		}(new Image(),picURL[i]));
+	}
+	return loadedImages;
+}
+var sources = ['../images/houston/','../images/ironman/'];
+
+/* Houston has 5 parts*/
+var houston = new preloadPics([sources[0]+'baseBG.jpg',sources[0]+'layer1BG.png',sources[0]+'layer2BG.png',sources[0]+'layer3BG.png',sources[0]+'layer4BG.png']);
+
+var ironman = new preloadPics([sources[1]+'baseBG.png',sources[1]+'layer1BG.png',sources[1]+'layer2BG.png',sources[1]+'layer3BG.png',sources[1]+'layer4BG.png',sources[1]+'layer5BG.png',sources[1]+'layer6BG.png',sources[1]+'layer7BG.png']);
+
+
+console.log(houston, ironman);
 /*
 	For use of navmenu routing
 	
@@ -116,17 +154,29 @@ function navmenu(){
 	return container
 };
 
+window.addEventListener('scroll',function(){
+	var height = window.offsetHeight;
+	console.log(height);
+})
+
+/*
+	Parallax Background
+
+	Have to do a seperate layer for this. My original idea didn't work... 
 
 
+*/
 
 
-console.log(window.location);
 
 /*
 	Home / Splash page
 */
 
-var parallaxPosition = 0;
+
+
+
+
 
 function HomePage(){
 	var bgSize = 120;
@@ -143,15 +193,18 @@ function HomePage(){
 
 	brandText.innerHTML = 'THE BIG OH';
 
-	var bgContainer = new divCreate('bg-container','col-xs-12 col-sm-12 col-md-12 col-lg-12');
+	var bgContainer = new divCreate('bg-container','col-xs-12 col-sm-12 col-md-12 col-lg-12 houston-parallax');
 
-	bgContainer.style.cssText = 'background:url(../images/stylizedBWBG1.png)no-repeat;background-size:140%140%;background-position:center;position:fixed;';
+	var baseBG = new divCreate('houston-base','col-xs-12 col-sm-12 col-md-12 col-lg-12 houston-parallax-stuff houston-parallax-base');
+			baseBG.style.cssText = 'background:url('+houston[0].currentSrc+')no-repeat;background-size:100%100%;background-position:center;';
+			bgContainer.append(baseBG);
 
-
-
-
+	var valkyre = new divCreate('houston-valk','col-xs-12 col-sm-12 col-md-12 col-lg-12');
+		valkyre.style.cssText = 'background:url('+houston[3].currentSrc+')no-repeat;background-size:100%100%;background-position:center;';
+			bgContainer.append(valkyre);
 	mainbrand.append(brandText);
-	container.append(bgContainer,mainbrand);
+	var main2 = new divCreate('main-logoo','col-xs-12 col-sm-12 col-md-12 col-lg-12');
+	container.append(bgContainer,mainbrand,main2);
 		
 	
 
@@ -170,7 +223,7 @@ function HomePage(){
 
 function AboutPage(){
 	var container = new divCreate('about','col-xs-12 col-sm-12 col-md-12 col-lg-12');
-	
+	var newcontainer = new divCreate('about-box','col-xs-12 col-sm-12 col-md-7 col-lg-7');
 	var expcontainer = new divCreate('exp-container','col-xs-12 col-sm-12 col-md-12 col-lg-12');
 
 	var contactinfo = [
@@ -346,8 +399,9 @@ function AboutPage(){
   	/*
 		Adding all the content for about page here.
   	*/
+  	newcontainer.append(expcontainer,aboutme);
 
-  	container.append(expcontainer,aboutme);
+  	container.append(newcontainer);
 	
 
 	return container;
@@ -403,7 +457,7 @@ function ProjectPage(){
         		{
         		'name':'Coding Blog',
         		'web':'http://blog.theBigOh.net',
-        		'framework':'MEAN',
+        		'framework':'MEAN Stack',
         		'img':'http://i.imgur.com/n2XT1Kp.png?1',
         		'descs':['Personal blog where I either talk about what I\'m coding or what I\'m being distracted by',
         				 'AngularJS for the front-end',
@@ -444,7 +498,7 @@ function ProjectPage(){
    				var projectInfoo = new divCreate('project-name','col-xs-12 col-sm-12 col-md-12 col-lg-12');
    					projectInfoo.innerHTML = '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 projects-name">'
    								 +projects[num].name
-   								 +'</div><div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 projects-framework">Made on '
+   								 +'</div><div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 projects-framework">Built on '
    								 +projects[num].framework
    								 +'</div><a class="col-xs-12 col-sm-12 col-md-6 col-lg-6 projects-link"href="'
    								 +projects[num].web
@@ -534,25 +588,27 @@ var body = document.querySelector('body');
 var bodycon = new divCreate('body-container','col-xs-12 col-sm-12 col-md-12 col-lg-12');
 var container = new divCreate('content-container','col-xs-12 col-sm-12 col-md-12 col-lg-12');
 
-bodycon.append(navmenu(),container);
+var paraLargeBG = new divCreate('large-display','hidden-xs hidden-sm col-md-12 col-lg-12 parallax');
+var paraSmallBG = new divCreate('small-display','hidden-md hidden-lg col-xs-12 col-sm-12');
+var para1 = new divCreate('parallax-base','col-xs-12 col-sm-12 col-md-12 col-lg-12 parallax-layer');
+var para2 = new divCreate('parallax-layer','col-xs-12 col-sm-12 col-md-12 col-lg-12 parallax-layer');
 
-body.append(bodycon);
+para1.append(HomePage(),AboutPage());
 
 var bodycontent = [HomePage(),AboutPage(),ProjectPage()];
 
-container.append(HomePage(),AboutPage(),ProjectPage());
 
 
-var parallax= document.querySelector(".parallax");
-window.onload = function(){
-	container.addEventListener("scroll", function() {
-    var scrolledHeight= window.pageYOffset,
-    limit= parallax.offsetTop+ parallax.offsetHeight;
-    if(scrolledHeight > parallax.offsetTop && scrolledHeight <= limit) {
-        parallax.style.backgroundPositionY= (scrolledHeight - parallax.offsetTop) /1.5+ "px";
-    } 
-    else {
-        parallax.style.backgroundPositionY= "0";
-    }
-});
-}
+
+
+
+paraLargeBG.append(para1,para2);
+
+
+bodycon.append(container);
+
+body.append(paraLargeBG,paraSmallBG);
+
+
+
+
