@@ -66,11 +66,113 @@ body{
 				position:relative;
 				margin-top:10%;
 				padding:0;
+				color:$darkWhite;
 				#about-box {
 					float:right;
-					border:1px solid white;
-					background:$lightBlack;
-					height:50%;
+					
+					
+					height:89%;
+					padding:0;
+
+
+					#about-text-container{
+						
+						height:60%;
+						padding:0;
+						margin-bottom:4%;
+						#about-text {
+							border-left:7px solid $darkWhite;
+							border-bottom:3px solid $darkWhite;
+							margin-bottom:2%;
+							color:$darkWhite;
+							font-family:Blockletter;
+							background:$darkBlack;
+							font-size:2em;
+							padding:0;
+							height:47%;
+
+							#about-picture{
+								height:100%;
+								float:right;
+							}
+						}
+						#skill-container {
+							border-left:7px solid $darkWhite;
+							
+							float:right;
+							height:53%;
+							font-family:Blockletter;
+							background:$darkBlack;
+							#skill-title{
+								font-size:1.5em;
+							}
+
+							.skill {
+								
+
+								height:27%;
+
+								.skillnames {
+									border-bottom:1px solid $darkWhite;
+									font-size:1.2em;
+								}
+								.skilllvl{
+									height:50%;
+									
+									padding:0;
+
+									.lvlblk {
+										height:100%;
+										padding:4%;
+										width:1%;
+										margin-left:1%;
+										.col-md-1{
+											width:5%;
+
+										}
+										.col-lg-1{
+											width:5%;
+										}
+										.lvlblack {
+										background:$lightBlack;
+										
+										height:80%;
+										}
+									}
+
+
+								}
+							}
+
+						}
+
+					}
+
+						#exp-container{
+							border-left:7px solid $darkWhite;
+							border-top:3px solid $darkWhite;
+							height:39%;
+
+							.exp-div {
+								
+								height:100%;
+								font-family:Blockletter;
+								
+								.exp-name {
+									border-bottom:4px solid $darkWhite;
+									font-size:2em;
+								}
+								.exp-date {
+									font-size:1.3em;
+								}
+								.exp-position{
+									font-size:1.5em;
+								}
+								.exp-resp {
+									font-size:1.2em;
+								}
+							}
+						}
 				}
 				
 			}

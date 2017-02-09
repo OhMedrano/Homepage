@@ -301,26 +301,26 @@ function AboutPage(){
   		var expdiv = document.createElement('div');
 
   		expdiv.setAttribute('id',exp.name);
-		expdiv.setAttribute('class','col-xs-3 col-sm-4 col-md-3 col-lg-3 exp-div');
+		expdiv.setAttribute('class','col-xs-3 col-sm-4 col-md-4 col-lg-4 exp-div');
 		
 		var expname = new divCreate(null,'col-xs-12 col-sm-12 col-md-12 col-lg-12 exp-name');
 		expname.innerHTML = `<span class="">${exp.name}</span>`;
 
-		var expdate = new divCreate(null,'col-xs-12 col-sm-12 col-md-8 col-lg-8 exp-date')
+		var expdate = new divCreate(null,'col-xs-12 col-sm-12 col-md-12 col-lg-12 exp-date')
 		if(exp.present){
 			expdate.innerHTML = `<span class="">${exp.startDate} - Present</span>`;
 		} else {
 			expdate.innerHTML = `<span class="">${exp.startDate} - ${exp.endDate}</span>`;
 		}
 
-		var expposition = new divCreate(null,'col-xs-12 col-sm-12 col-md-12 col-lg-12 ' + exp.name+'-position');
+		var expposition = new divCreate(null,'col-xs-12 col-sm-12 col-md-12 col-lg-12 exp-position ' + exp.name+'-position');
 		expposition.innerHTML = `<span class="">${exp.position}</span>`;
 
 
-		var expresp = new divCreate(null,'col-xs-12 col-sm-12 col-md-12 col-lg-12 ' + exp.name+'-respon')
+		var expresp = new divCreate(null,'col-xs-12 col-sm-12 col-md-12 col-lg-12 exp-resp ' + exp.name+'-respon')
 		
 		for(var x=0;x<exp.respon.length;x++){
-			var res = new divCreate(null,'col-xs-12 col-sm-12 col-md-12 col-lg-12 ' +'resp'+x);
+			var res = new divCreate(null,'col-xs-12 col-sm-12 col-md-12 col-lg-12 group-resp ' +'resp'+x);
 
 			res.innerHTML = exp.respon[x];
 
@@ -346,7 +346,7 @@ function AboutPage(){
 
 
 	var aboutme = new divCreate('about-text-container','col-xs-12 col-sm-12 col-md-12 col-lg-12');
-	var skillcon = new divCreate('skill-container','col-xs-12 col-sm-12 col-md-3 col-lg-3');
+	var skillcon = new divCreate('skill-container','col-xs-12 col-sm-12 col-md-9 col-lg-9');
 
 	var skillTitle = new divCreate('skill-title','col-xs-12 col-sm-12 col-md-12 col-lg-12');
 	skillTitle.innerHTML = 'Skills';
@@ -354,19 +354,21 @@ function AboutPage(){
 	for(var z=0;z<skills.length;z++){
 		var skill = skills[z];
 
-		var div = new divCreate('skill'+z,'col-xs-12 col-sm-12 col-md-12 col-lg-12 skill');
+		var div = new divCreate('skill'+z,'col-xs-12 col-sm-12 col-md-6 col-lg-6 skill');
 		var lvl = new divCreate('lvl'+z,'col-xs-12 col-sm-12 col-md-12 col-lg-12 skilllvl');
 		var levelset = [];
 		
 
 		for(var y=0;y<10;y++){
 			if(skill.level > y){
-				var lvlblk = new divCreate(null,'col-sm-1 col-xs-1 col-md-1 col-lg-1 lvlblk lvlblack');
-			
+				var lvlblk = new divCreate(null,'col-sm-1 col-xs-1 col-md-1 col-lg-1 lvlblk ');
+				var lvlcolor = new divCreate(null,'col-sm-1 col-xs-1 col-md-1 col-lg-1  lvlblack');
+				lvlblk.append(lvlcolor);
 				lvl.append(lvlblk);
 			} else {
-				var lvlblk = new divCreate(null,'col-sm-1 col-xs-1 col-md-1 col-lg-1 lvlblk lvlclear');
-				
+				var lvlblk = new divCreate(null,'col-sm-1 col-xs-1 col-md-1 col-lg-1 lvlblk ');
+				var lvlcolor = new divCreate(null,'col-sm-1 col-xs-1 col-md-1 col-lg-1    lvlclear');
+				lvlblk.append(lvlcolor);
 				lvl.append(lvlblk);
 			};
 		}
@@ -383,23 +385,23 @@ function AboutPage(){
 
 	
 
-	var aboutText = new divCreate('about-text','col-xs-12 col-sm-12 col-md-8 col-lg-8');
+	var aboutText = new divCreate('about-text','col-xs-12 col-sm-12 col-md-12 col-lg-12');
 
-	var text = `<span class="col-xs-12 col-sm-12 col-md-4 col-lg-4 inner-text">My name is Oscar. <br>I play guitar, can code, <br>and been known to eat a lot.</span>`;
+	var text = `<span class="col-xs-12 col-sm-12 col-md-8 col-lg-8 inner-text">My name is Oscar. <br>I play guitar, can code, <br>and been known to eat a lot.</span>`;
 
 	aboutText.innerHTML = text;
 
 	var picture = new divCreate('about-picture','col-xs-12 col-sm-12 col-md-3 col-lg-3');
-	picture.style.cssText = 'background:url(../images/mainFace.jpg)no-repeat;background-size:90% 130%;background-position-x:99%;background-position-y:0%;'
+	picture.style.cssText = 'background:url(../images/face.png)no-repeat;background-size:90% 130%;background-position-x:99%;background-position-y:0%;'
 	aboutText.append(picture);
 
 
 
-	aboutme.append(skillcon,aboutText);
+	aboutme.append(aboutText,skillcon);
   	/*
 		Adding all the content for about page here.
   	*/
-  	newcontainer.append(expcontainer,aboutme);
+  	newcontainer.append(aboutme,expcontainer);
 
   	container.append(newcontainer);
 	
