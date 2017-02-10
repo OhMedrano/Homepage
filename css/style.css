@@ -8,224 +8,204 @@
   background: #252529;
   color: #81818A; }
 
-/* Actual DOM --- large screens 1920x1080  */
-#body-container {
-  height: 100vh;
-  padding: 0;
-  font-family: Blockletter;
-  background: #252529; }
-  #body-container #nav {
-    height: 10%;
+body {
+  background: #252529;
+  padding: 0; }
+  body #large-display {
+    perspective: 1px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transform-style: preserve-3d;
+    height: 100vh;
     padding: 0;
-    color: #D6D6D6;
-    background: #252529; }
-    #body-container #nav .nav-menu-link {
+    /* Para2 starts here */ }
+    body #large-display #parallax-base {
+      height: 100%;
       padding: 0;
-      height: 100%;
-      font-size: 3em;
-      text-align: center;
-      border-bottom: 3px solid black; }
-      #body-container #nav .nav-menu-link span {
+      z-index: 5; }
+      body #large-display #parallax-base #home {
+        height: 100%;
         padding: 0;
-        height: 100%; }
-      #body-container #nav .nav-menu-link :hover {
-        background: #D6D6D6;
-        color: #81818A;
-        cursor: pointer; }
-  #body-container #content-container {
-    height: 90%;
-    overflow: auto;
-    padding: 0;
-    /* HOME PAGE */
-    /*  */
-    /* ABOUT PAGE */
-    /* End of About Page */
-    /* Projects Page */
-    /* End of Projects Page */ }
-    #body-container #content-container #home {
-      height: 100%;
-      position: sticky;
-      padding: 0; }
-      #body-container #content-container #home #bg-container {
-        height: 100%;
-        padding: 0; }
-      #body-container #content-container #home #main-logo {
-        height: 100%;
-        font-size: 8em;
-        color: #81818A;
-        padding: 0; }
-        #body-container #content-container #home #main-logo #brand-text {
-          float: right;
-          position: relative;
-          top: 80%;
-          text-align: right; }
-    #body-container #content-container #about {
-      height: 100%;
-      background: #252529;
-      /*  
-				Standard styles / EXP container
-			 */
-      /* About Text Section */ }
-      #body-container #content-container #about #exp-container {
-        padding: 1%;
-        height: 50%;
-        /* Individual styles */ }
-        #body-container #content-container #about #exp-container .exp-div {
-          margin: 1%;
-          font-size: 2em;
-          height: 100%;
-          border: 1px none;
-          width: 31%;
-          background: #6F6F6F;
-          padding: 1%; }
-          #body-container #content-container #about #exp-container .exp-div .exp-name {
-            font-size: 3em;
-            border-bottom: 3px solid black; }
-        #body-container #content-container #about #exp-container #Freelance {
-          border-right: 4px solid black;
-          height: 100%; }
-          #body-container #content-container #about #exp-container #Freelance .exp-date {
-            border-bottom: 3px solid black;
-            border-right: 3px solid black; }
-        #body-container #content-container #about #exp-container #Konditori {
-          text-align: center;
-          border-right: 4px solid black;
-          border-left: 4px solid black;
-          height: 100%; }
-          #body-container #content-container #about #exp-container #Konditori .exp-date {
-            border-bottom: 3px solid black;
-            border-left: 3px solid black;
-            border-right: 3px solid black;
-            margin-left: 17%; }
-        #body-container #content-container #about #exp-container #CitiGroup {
-          text-align: right;
-          border-left: 4px solid black;
-          height: 100%; }
-          #body-container #content-container #about #exp-container #CitiGroup .exp-date {
-            float: right;
-            border-bottom: 3px solid black;
-            border-left: 3px solid black; }
-      #body-container #content-container #about #about-text-container {
-        height: 49%; }
-        #body-container #content-container #about #about-text-container #skill-container {
-          background: #6F6F6F;
-          font-size: 1em;
-          margin: 1%; }
-          #body-container #content-container #about #about-text-container #skill-container #skill-title {
-            border-bottom: 3px solid black;
-            font-size: 3em; }
-          #body-container #content-container #about #about-text-container #skill-container .skill .skilllvl {
-            height: 2vh;
-            padding: 0%;
-            margin: 1%; }
-            #body-container #content-container #about #about-text-container #skill-container .skill .skilllvl .lvlblk {
-              margin: 1%;
-              padding: 1%;
-              width: 5%; }
-            #body-container #content-container #about #about-text-container #skill-container .skill .skilllvl .lvlblack {
-              border: 3px solid black;
-              background: black; }
-            #body-container #content-container #about #about-text-container #skill-container .skill .skilllvl .lvlclear {
-              border: 3px solid black;
-              background: #6F6F6F; }
-        #body-container #content-container #about #about-text-container #about-text {
-          height: 60%;
-          position: relative;
-          top: 5%;
-          font-size: 2em;
-          background: #6F6F6F;
-          float: right;
-          margin: 2%;
+        z-index: 4; }
+        body #large-display #parallax-base #home #bg-container {
+          height: 70%;
           padding: 0; }
-          #body-container #content-container #about #about-text-container #about-text #about-picture {
+          body #large-display #parallax-base #home #bg-container #houston-base {
             height: 100%;
-            float: right; }
-    #body-container #content-container #projects {
-      height: 100%;
-      padding: 0; }
-      #body-container #content-container #projects #image-container {
+            position: absolute;
+            top: 0;
+            z-index: 2; }
+          body #large-display #parallax-base #home #bg-container #houston-valk {
+            height: 100%;
+            position: fixed;
+            top: 0;
+            transform: translateY(908px) translateX(-852px) translateZ(-1px) scale(2); }
+        body #large-display #parallax-base #home #main-logo {
+          font-size: 15em;
+          font-family: Blockletter;
+          color: #81818A;
+          float: right;
+          height: 30%;
+          background: #252529; }
+      body #large-display #parallax-base #about {
+        height: 100vh;
+        position: relative;
+        z-index: 4;
+        padding: 0;
+        color: #81818A; }
+        body #large-display #parallax-base #about #about-box {
+          float: right;
+          background: #252529;
+          height: 100%;
+          padding: 0; }
+          body #large-display #parallax-base #about #about-box #about-text-container {
+            height: 60%;
+            padding: 0;
+            margin-bottom: 4%; }
+            body #large-display #parallax-base #about #about-box #about-text-container #about-text {
+              border-left: 7px solid #81818A;
+              border-bottom: 3px solid #81818A;
+              margin-bottom: 2%;
+              color: #81818A;
+              font-family: Blockletter;
+              background: #252529;
+              font-size: 1.5em;
+              padding: 0;
+              height: 47%; }
+              body #large-display #parallax-base #about #about-box #about-text-container #about-text .contact-links {
+                height: 71%;
+                padding: 1%;
+                font-size: 0.7em;
+                color: #81818A;
+                position: relative;
+                top: 17%; }
+                body #large-display #parallax-base #about #about-box #about-text-container #about-text .contact-links:hover {
+                  background: #81818A;
+                  color: #252529; }
+                body #large-display #parallax-base #about #about-box #about-text-container #about-text .contact-links .contact-image {
+                  height: 88%; }
+                body #large-display #parallax-base #about #about-box #about-text-container #about-text .contact-links .contact-text {
+                  word-wrap: break-word;
+                  border-bottom: 3px solid #81818A; }
+              body #large-display #parallax-base #about #about-box #about-text-container #about-text #about-picture {
+                height: 100%;
+                float: right; }
+            body #large-display #parallax-base #about #about-box #about-text-container #skill-container {
+              border-left: 7px solid #81818A;
+              float: right;
+              height: 53%;
+              font-family: Blockletter;
+              background: #252529; }
+              body #large-display #parallax-base #about #about-box #about-text-container #skill-container #skill-title {
+                font-size: 1.5em; }
+              body #large-display #parallax-base #about #about-box #about-text-container #skill-container .skill {
+                height: 27%; }
+                body #large-display #parallax-base #about #about-box #about-text-container #skill-container .skill .skillnames {
+                  border-bottom: 1px solid #81818A;
+                  font-size: 1.2em; }
+                body #large-display #parallax-base #about #about-box #about-text-container #skill-container .skill .skilllvl {
+                  height: 50%;
+                  padding: 0; }
+                  body #large-display #parallax-base #about #about-box #about-text-container #skill-container .skill .skilllvl .lvlblk {
+                    height: 100%;
+                    padding: 4%;
+                    width: 1%;
+                    margin-left: 1%; }
+                    body #large-display #parallax-base #about #about-box #about-text-container #skill-container .skill .skilllvl .lvlblk .col-md-1 {
+                      width: 5%; }
+                    body #large-display #parallax-base #about #about-box #about-text-container #skill-container .skill .skilllvl .lvlblk .col-lg-1 {
+                      width: 5%; }
+                    body #large-display #parallax-base #about #about-box #about-text-container #skill-container .skill .skilllvl .lvlblk .lvlblack {
+                      background: #6F6F6F;
+                      height: 80%; }
+          body #large-display #parallax-base #about #about-box #exp-container {
+            border-left: 7px solid #81818A;
+            border-top: 3px solid #81818A;
+            height: 39%; }
+            body #large-display #parallax-base #about #about-box #exp-container .exp-div {
+              height: 100%;
+              font-family: Blockletter; }
+              body #large-display #parallax-base #about #about-box #exp-container .exp-div .exp-name {
+                border-bottom: 4px solid #81818A;
+                font-size: 2em; }
+              body #large-display #parallax-base #about #about-box #exp-container .exp-div .exp-date {
+                font-size: 1.3em; }
+              body #large-display #parallax-base #about #about-box #exp-container .exp-div .exp-position {
+                font-size: 1.5em; }
+              body #large-display #parallax-base #about #about-box #exp-container .exp-div .exp-resp {
+                font-size: 1.2em; }
+    body #large-display #parallax-layer {
+      height: 200vh;
+      position: fixed;
+      top: 203%;
+      padding: 0;
+      z-index: 9;
+      persepective: 1px; }
+      body #large-display #parallax-layer #projects {
         height: 100%;
         padding: 0; }
-        #body-container #content-container #projects #image-container #project-container {
-          border: 1px solid black;
+        body #large-display #parallax-layer #projects #image-container {
+          height: 30%;
+          padding: 0; }
+        body #large-display #parallax-layer #projects #project-container {
+          height: 18%;
           padding: 0;
-          position: relative;
-          height: 100%; }
-          #body-container #content-container #projects #image-container #project-container #project-details {
-            border-bottom: 4px solid black;
-            border-right: 4px solid black;
-            height: 30%;
-            margin-top: 1%;
-            margin-bottom: 2%;
-            background: #252529;
-            color: #D6D6D6; }
-            #body-container #content-container #projects #image-container #project-container #project-details #project-name {
-              font-size: 1em;
-              text-align: right; }
-              #body-container #content-container #projects #image-container #project-container #project-details #project-name .projects-name {
-                font-size: 2em;
-                text-align: left;
-                border-bottom: 3px solid #D6D6D6; }
-              #body-container #content-container #projects #image-container #project-container #project-details #project-name .projects-framework {
-                text-align: right;
-                font-size: 1.5em;
-                background: #D6D6D6;
-                color: #252529;
-                padding: 0; }
-              #body-container #content-container #projects #image-container #project-container #project-details #project-name .projects-link {
-                color: #D6D6D6;
-                font-size: 1.5em;
-                padding: 0; }
-                #body-container #content-container #projects #image-container #project-container #project-details #project-name .projects-link:hover {
-                  background: #D6D6D6;
-                  color: #252529; }
-            #body-container #content-container #projects #image-container #project-container #project-details .projects-desc {
-              padding: 0;
-              font-size: 1.2em; }
-              #body-container #content-container #projects #image-container #project-container #project-details .projects-desc .project-desc-list {
-                margin: 0.25%; }
-          #body-container #content-container #projects #image-container #project-container #project-select {
-            position: relative;
-            height: 28%;
-            padding-top: 3%;
-            padding-left: 0%;
-            padding-right: 0%; }
-            #body-container #content-container #projects #image-container #project-container #project-select #project-select-container {
-              height: 70%;
-              background: #252529;
-              border-top: 2px solid black;
-              border-bottom: 5px solid black; }
-              #body-container #content-container #projects #image-container #project-container #project-select #project-select-container .project-display {
-                height: 100%; }
-          #body-container #content-container #projects #image-container #project-container #project-detailss {
-            border: 1px solid black;
-            height: 30%;
+          color: #81818A; }
+          body #large-display #parallax-layer #projects #project-container #project-detailss {
+            border-left: 4px solid #81818A;
             float: right;
-            margin-top: 19%;
+            z-index: 10;
             background: #252529;
-            color: #D6D6D6; }
-            #body-container #content-container #projects #image-container #project-container #project-detailss #project-name {
-              font-size: 1em;
-              text-align: right; }
-              #body-container #content-container #projects #image-container #project-container #project-detailss #project-name .projects-name {
-                font-size: 2em;
-                text-align: left;
-                border-bottom: 3px solid #D6D6D6; }
-              #body-container #content-container #projects #image-container #project-container #project-detailss #project-name .projects-framework {
-                text-align: right;
-                font-size: 1.5em;
-                background: #D6D6D6;
-                color: #252529;
-                padding: 0; }
-              #body-container #content-container #projects #image-container #project-container #project-detailss #project-name .projects-link {
-                color: #D6D6D6;
-                font-size: 1.5em;
-                padding: 0; }
-                #body-container #content-container #projects #image-container #project-container #project-detailss #project-name .projects-link:hover {
-                  background: #D6D6D6;
+            top: -118%;
+            font-family: Blockletter; }
+            body #large-display #parallax-layer #projects #project-container #project-detailss #project-name {
+              font-size: 1.8em; }
+              body #large-display #parallax-layer #projects #project-container #project-detailss #project-name .projects-name {
+                border-bottom: 3px solid #81818A; }
+              body #large-display #parallax-layer #projects #project-container #project-detailss #project-name .projects-framework {
+                background: #81818A;
+                color: #252529; }
+              body #large-display #parallax-layer #projects #project-container #project-detailss #project-name .projects-link {
+                color: #81818A; }
+                body #large-display #parallax-layer #projects #project-container #project-detailss #project-name .projects-link:hover {
+                  background: #81818A;
                   color: #252529; }
-            #body-container #content-container #projects #image-container #project-container #project-detailss .projects-desc {
-              padding: 0;
-              font-size: 1.2em; }
-              #body-container #content-container #projects #image-container #project-container #project-detailss .projects-desc .project-desc-list {
-                margin: 0.25%; }
+            body #large-display #parallax-layer #projects #project-container #project-detailss .projects-desc {
+              font-size: 1.5em; }
+          body #large-display #parallax-layer #projects #project-container #project-select {
+            height: 50%;
+            position: absolute;
+            top: 10%; }
+            body #large-display #parallax-layer #projects #project-container #project-select #project-select-container {
+              height: 100%; }
+              body #large-display #parallax-layer #projects #project-container #project-select #project-select-container .project-display {
+                height: 100%; }
+        body #large-display #parallax-layer #projects #parallax2 {
+          height: 35%;
+          padding: 0; }
+          body #large-display #parallax-layer #projects #parallax2 #iron-wall {
+            height: 100%;
+            padding: 0;
+            position: absolute;
+            z-index: 5; }
+          body #large-display #parallax-layer #projects #parallax2 #iron-para {
+            height: 100%; }
+            body #large-display #parallax-layer #projects #parallax2 #iron-para .iron-body {
+              height: 100%;
+              position: fixed;
+              transform: translateZ(-3px) translateY(100px) translateX(1000px) scale(2);
+              z-index: 2;
+              top: 366%;
+              bottom: 0;
+              left: 63%; }
+        body #large-display #parallax-layer #projects #project-div-title {
+          height: 15%;
+          background: #252529;
+          z-index: 5; }
+          body #large-display #parallax-layer #projects #project-div-title #brand-text {
+            font-size: 15em;
+            font-family: Blockletter;
+            position: relative;
+            top: 15%;
+            float: right;
+            color: #81818A; }

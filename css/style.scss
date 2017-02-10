@@ -32,9 +32,11 @@ body{
 		#parallax-base {
 			height:100%;
 			padding:0;
+			z-index:5;
 			#home {
 				height:100%;
 				padding:0;
+				z-index:4;
 				#bg-container {
 					height:70%;
 					padding:0;
@@ -64,14 +66,15 @@ body{
 			#about {
 				height:100vh;
 				position:relative;
-				margin-top:10%;
+				z-index:4;
 				padding:0;
 				color:$darkWhite;
+
 				#about-box {
 					float:right;
+					background:$darkBlack;
 					
-					
-					height:89%;
+					height:100%;
 					padding:0;
 
 
@@ -87,10 +90,31 @@ body{
 							color:$darkWhite;
 							font-family:Blockletter;
 							background:$darkBlack;
-							font-size:2em;
+							font-size:1.5em;
 							padding:0;
 							height:47%;
 
+							.contact-links {
+								
+								height:71%;
+								padding:1%;
+								font-size:0.7em;
+								color:$darkWhite;
+								position:relative;
+								top:17%;
+
+								&:hover{
+									background:$darkWhite;
+									color:$darkBlack;
+								}
+								.contact-image{
+									height:88%;
+								}
+								.contact-text {
+									word-wrap:break-word;
+									border-bottom:3px solid $darkWhite;
+								}
+							}
 							#about-picture{
 								height:100%;
 								float:right;
@@ -177,6 +201,121 @@ body{
 				
 			}
 		}
+
+
+		/* Para2 starts here */
+
+		#parallax-layer {
+			height:200vh;
+			position:fixed;
+			top:203%;
+			
+			padding:0;
+			z-index:9;
+			persepective:1px;
+			#projects{
+				height:100%;
+				padding:0;
+				#image-container{
+					height:30%;
+					padding:0;
+					
+				}
+				#project-container{
+						height:18%;
+						padding:0;
+						color:$darkWhite;
+					
+
+						#project-detailss {
+							    border-left: 4px solid $darkWhite;
+    							float: right;
+							    z-index: 10;
+    							background: $darkBlack;
+    							top:-118%;
+    							font-family:Blockletter;
+
+    							#project-name {
+    								font-size:1.8em;
+
+    									.projects-name{
+    										border-bottom:3px solid $darkWhite;
+    									}
+    									.projects-framework{
+    										background:$darkWhite;
+    										color:$darkBlack;
+    									}
+    									.projects-link {
+    										color:$darkWhite;
+    										&:hover{
+    											background:$darkWhite;
+    											color:$darkBlack;
+    										}
+    									}
+    							}
+    							.projects-desc{
+    								font-size:1.5em;
+    							}
+
+
+						}
+						#project-select{
+							
+							height:50%;
+							position:absolute;
+								top:10%;
+							#project-select-container{
+								height:100%;
+
+								 .project-display {
+								height:100%;
+								}
+							}
+						}
+					}
+				#parallax2 {
+					height:35%;
+					padding:0;
+
+					#iron-wall{
+						height:100%;
+						padding:0;
+						position:absolute;
+						z-index:5;
+												}
+					#iron-para{
+						height:100%;
+
+						.iron-body{
+							height:100%;
+							position:fixed;
+							transform:translateZ(-3px) translateY(100px) translateX(1000px) scale(2);
+							z-index:2;
+							top:366%;
+							bottom:0;
+							
+							left:63%;
+						}
+					}
+				}
+				#project-div-title{
+					height:15%;
+					background:$darkBlack;
+					z-index:5;
+					#brand-text {
+						font-size:15em;
+						font-family:Blockletter;
+						position:relative;
+						top:15%;
+						float:right;
+						color:$darkWhite;
+
+					}
+				}
+			}
+
+		}
+
 
 	}
 }

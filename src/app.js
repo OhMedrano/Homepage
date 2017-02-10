@@ -49,7 +49,7 @@ var houston = new preloadPics([sources[0]+'baseBG.jpg',sources[0]+'layer1BG.png'
 var ironman = new preloadPics([sources[1]+'baseBG.png',sources[1]+'layer1BG.png',sources[1]+'layer2BG.png',sources[1]+'layer3BG.png',sources[1]+'layer4BG.png',sources[1]+'layer5BG.png',sources[1]+'layer6BG.png',sources[1]+'layer7BG.png']);
 
 
-console.log(houston, ironman);
+console.log(ironman);
 /*
 	For use of navmenu routing
 	
@@ -227,9 +227,9 @@ function AboutPage(){
 	var expcontainer = new divCreate('exp-container','col-xs-12 col-sm-12 col-md-12 col-lg-12');
 
 	var contactinfo = [
-          {'type':'Email','link':'mailTo:oscar@thebigoh.net','img':'../images/pic/email.png','text':'Oscar@TheBigOh.Net'},
-          {'type':'LinkedIn','link':'http://linkedin.com/in/oscarmedrano','img':'../images/pic/linkedIn.png','text':'Oscar Medrano'},
-          {'type':'Github','link':'https://github.com/ohmedrano','img':'../images/pic/gitBlack.png','text':'OhMedrano'}
+          {'type':'Email','link':'mailTo:oscar@thebigoh.net','img':'../images/email.png','text':'Oscar@TheBigOh.Net'},
+          {'type':'LinkedIn','link':'http://linkedin.com/in/oscarmedrano','img':'../images/linkedIn.png','text':'Oscar Medrano'},
+          {'type':'Github','link':'https://github.com/ohmedrano','img':'../images/gitBlack.png','text':'OhMedrano'}
 
       ];
 
@@ -386,16 +386,32 @@ function AboutPage(){
 	
 
 	var aboutText = new divCreate('about-text','col-xs-12 col-sm-12 col-md-12 col-lg-12');
-
-	var text = `<span class="col-xs-12 col-sm-12 col-md-8 col-lg-8 inner-text">My name is Oscar. <br>I play guitar, can code, <br>and been known to eat a lot.</span>`;
+	var textstuff = 'I like to code, and play guitar when I\'m stuck.';
+	var text = `<span class="col-xs-12 col-sm-12 col-md-8 col-lg-8 inner-text">${textstuff}</span>`;
 
 	aboutText.innerHTML = text;
 
 	var picture = new divCreate('about-picture','col-xs-12 col-sm-12 col-md-3 col-lg-3');
-	picture.style.cssText = 'background:url(../images/face.png)no-repeat;background-size:90% 130%;background-position-x:99%;background-position-y:0%;'
+	picture.style.cssText = 'background:url(../images/face.png)no-repeat;background-size:100% 120%;background-position-x:99%;background-position-y:0%;'
 	aboutText.append(picture);
 
 
+	for(var q=0;q<contactinfo.length;q++){
+  		var contact = contactinfo[q];
+  		var contactlink = document.createElement('a');
+  		contactlink.setAttribute('href',contact.web);
+  		contactlink.setAttribute('class','col-xs-12 col-sm-12 col-md-2 col-lg-2 contact-links');
+
+  		var contactImage = new divCreate('contact-image'+q,'col-xs-12 col-sm-12 col-md-12 col-lg-12 contact-image');
+  		contactImage.style.cssText = 'background:url('+contact.img+')no-repeat;background-size:50%50%;background-position:center;';
+  		var contactText = new divCreate('contact-text'+q,'col-xs-12 col-sm-12 col-md-12 col-lg-12 contact-text');
+		contactText.innerHTML = contact.text;
+
+		contactlink.append(contactImage,contactText);  		
+  		aboutText.append(contactlink);
+
+  		console.log('sup');
+  	}
 
 	aboutme.append(aboutText,skillcon);
   	/*
@@ -405,7 +421,7 @@ function AboutPage(){
 
   	container.append(newcontainer);
 	
-
+  	console.log('hey');
 	return container;
 }
 /**/
@@ -486,13 +502,13 @@ function ProjectPage(){
 
    		let linknum = 0; 
 
-   		var imageContainer = new divCreate('image-container','col-xs-12 col-sm-12 col-md-12 col-lg-12');
+   		var imageContainer = new divCreate('image-container','col-xs-12 col-sm-12 col-md-6 col-lg-6');
 
    		var projectSelect = new divCreate('project-select','col-xs-12 col-sm-12 col-md-12 col-lg-12');
-   		var projectSelectContainer = new divCreate('project-select-container','col-xs-12 col-sm-12 col-md-12 col-lg-12');
+   		var projectSelectContainer = new divCreate('project-select-container','col-xs-12 col-sm-12 col-md-6 col-lg-6');
 
    		var projectDetails = new divCreate('project-details','col-xs-12 col-sm-12 col-md-4 col-lg-4');
-   		var projectDetailss = new divCreate('project-detailss','col-xs-12 col-sm-12 col-md-4 col-lg-4');
+   		var projectDetailss = new divCreate('project-detailss','col-xs-12 col-sm-12 col-md-5 col-lg-5');
 
    		var projectContainer = new divCreate('project-container','col-xs-12 col-sm-12 col-md-12 col-lg-12');
 
@@ -532,7 +548,7 @@ function ProjectPage(){
    			
 
 
-   			var projectDisplay = new divCreate('project'+i,'col-xs-12 col-sm-12 col-md-2 col-lg-2 project-display');
+   			var projectDisplay = new divCreate('project'+i,'col-xs-12 col-sm-12 col-md-4 col-lg-4 project-display');
    			projectDisplay.setAttribute('projectId',i);
    			projectDisplay.style.cssText = `background:url(${project.img})no-repeat;background-size:80% 80%;background-position:center;`;
 
@@ -563,22 +579,48 @@ function ProjectPage(){
 
    		}
 
+   		var projectdivtitle = new divCreate('project-div-title','col-xs-12 col-sm-12 col-md-12 col-lg-12');
+
+   		var brandText = new divCreate('brand-text','col-xs-12 col-sm-12 col-md-6 col-lg-6');
+
+		brandText.innerHTML = 'PROJECTS';
+
+
+		projectdivtitle.append(brandText);
 
    		
 
    		imageContainer.style.cssText = `background:url(${projects[linknum].img})no-repeat;background-size:100% 100%;background-position:center;`;
 
+   		var parallaxbg = new divCreate('parallax2','col-xs-12 col-sm-12 col-md-12 col-lg-12 iron-parallax');
 
+   		var ironBG = new divCreate('iron-wall','col-xs-12 col-sm-12 col-md-12 col-lg-12');
 
+   		ironBG.style.cssText = 'background:url('+ironman[0].currentSrc+')no-repeat;background-size:100%100%;background-position:center;';
+
+   		var ironPara = new divCreate('iron-para','col-xs-12 col-sm-12 col-md-12 col-lg-12');
+
+   		for(var v=1;v<ironman.length;v++){
+   			
+
+   			var ironbody = new divCreate('iron'+v,'col-xs-12 col-sm-12 col-md-12 col-lg-12 iron-body');
+
+   			ironbody.style.cssText = 'background:url('+ironman[v].currentSrc+')no-repeat;background-size:100%100%;background-position:center;';
+
+   			ironPara.append(ironbody);
+   		}
+
+   		parallaxbg.append(ironBG,ironPara);
 
    		projectSelect.append(projectSelectContainer);
 
    		projectContainer.append( projectDetailss,projectSelect);
-   		imageContainer.append(projectContainer);
-   		container.append(imageContainer);
+   		
+   		container.append(parallaxbg,projectdivtitle,imageContainer,projectContainer);
 
 	return container;
 };
+
 
 
 /*Parallax function*/
@@ -596,6 +638,7 @@ var para1 = new divCreate('parallax-base','col-xs-12 col-sm-12 col-md-12 col-lg-
 var para2 = new divCreate('parallax-layer','col-xs-12 col-sm-12 col-md-12 col-lg-12 parallax-layer');
 
 para1.append(HomePage(),AboutPage());
+para2.append(ProjectPage());
 
 var bodycontent = [HomePage(),AboutPage(),ProjectPage()];
 
