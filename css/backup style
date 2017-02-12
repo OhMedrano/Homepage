@@ -1,339 +1,10 @@
-@font-face {
-  font-family:Blockletter;
-  src:url('Blockletter.otf');
-}
-
-/* Colors */
-
-$lightWhite: #D6D6D6;
-$darkWhite: #81818A;
-$darkBlack: #252529;
-$lightBlack: #6F6F6F;
-
-
-
-/* Style switches */
-.highlight {
-		background:$darkBlack;
-				color:$darkWhite;
-}
-
-body{
-
-	background:$darkBlack;
-	padding:0;
-	
-}
-
-/* Phones  */
-
-@media screen and (min-width: 320px) {
-	#large-display{
-	
-
-	
-	height:100vh;
-	padding:0;
-		#parallax-base {
-			height:100%;
-			padding:0;
-			z-index:5;
-			#home {
-				height:100%;
-				padding:0;
-				z-index:4;
-				#bg-container {
-					height:70%;
-					padding:0;
-					#houston-base{
-						height:60%;
-						position:absolute;
-						top:75px;
-						z-index:2;
-
-					}
-					#houston-valk {
-						
-						position:fixed;
-						top:0;
-						
-						
-					}
-				}
-				#main-logo{
-					font-size:4.75em;
-					font-family:Blockletter;
-					color:$darkWhite;
-					float:right;
-					
-					height:30%;
-					background:$darkBlack;
-				}
-			}
-			#about {
-				height:140vh;
-				position:relative;
-				z-index:4;
-				padding:0;
-				color:$darkWhite;
-
-				#about-box {
-					float:right;
-					background:$darkBlack;
-					
-					height:100%;
-					padding:0;
-
-
-					#about-text-container{
-						
-						height:67%;
-						padding:0;
-						
-						#about-text {
-							border-left:7px solid $darkWhite;
-							border-bottom:3px solid $darkWhite;
-							
-							color:$darkWhite;
-							font-family:Blockletter;
-							background:$darkBlack;
-							font-size:1.2em;
-							padding:0;
-							height:35%;
-
-							.contact-links {
-								
-								
-								padding:1%;
-								font-size:0.7em;
-								color:$darkWhite;
-								position:relative;
-								top:-65%;
-								margin-bottom:2%;
-								
-								.contact-image-mobile{
-								
-								}
-								.contact-text-mobile {
-									word-wrap:break-word;
-									border-bottom:3px solid $darkWhite;
-								}
-							}
-							#about-picture{
-								height:100%;
-								float:right;
-							}
-						}
-						#skill-container {
-							border-left:7px solid $darkWhite;
-							
-							float:right;
-							height:65%;
-							font-family:Blockletter;
-							background:$darkBlack;
-							#skill-title{
-								font-size:1.2em;
-							}
-
-							.skill {
-								
-
-								height:14%;
-
-								.skillnames {
-									border-bottom:1px solid $darkWhite;
-									font-size:1.1em;
-								}
-								.skilllvl{
-									height:83%;
-									
-									padding:0;
-
-									.lvlblk {
-										height:100%;
-										padding:4%;
-										width:1%;
-										margin-left:1%;
-										.col-md-1{
-											width:5%;
-
-										}
-										.col-lg-1{
-											width:5%;
-										}
-										.lvlblack {
-										background:$lightBlack;
-										
-										height:80%;
-										}
-									}
-
-
-								}
-							}
-
-						}
-
-					}
-
-						#exp-container{
-							border-left:7px solid $darkWhite;
-							border-top:3px solid $darkWhite;
-							height:24%;
-							
-							.exp-div {
-								margin-bottom:9%;
-								height:20%;
-								font-family:Blockletter;
-								
-								.exp-name {
-									border-bottom:4px solid $darkWhite;
-									font-size:1.2em;
-								}
-								.exp-date {
-									font-size:0.82em;
-								}
-								.exp-position{
-									font-size:1.4em;
-								}
-								.exp-resp {
-									font-size:1.2em;
-								}
-							}
-						}
-				}
-				
-			}
-		}
-
-
-		/* Para2 starts here */
-
-		#parallax-layer {
-			height:200vh;
-			position:absolute;
-			top:203%;
-			
-			padding:0;
-			z-index:9;
-			
-			#projects{
-				height:100%;
-				padding:0;
-				#image-container{
-					height:30%;
-					padding:0;
-					
-				}
-				#project-container{
-						height:18%;
-						padding:0;
-						color:$darkWhite;
-					
-
-						#project-detailss {
-							    border-left: 4px solid $darkWhite;
-    							
-							    
-    							background: $darkBlack;
-    							
-    							font-family:Blockletter;
-
-    							#project-name {
-    								font-size:1.8em;
-
-    									.projects-name{
-    										border-bottom:3px solid $darkWhite;
-    									}
-    									.projects-framework{
-    										background:$darkWhite;
-    										color:$darkBlack;
-    									}
-    									.projects-link {
-    										color:$darkWhite;
-    										&:hover{
-    											background:$darkWhite;
-    											color:$darkBlack;
-    										}
-    									}
-    							}
-    							.projects-desc{
-    								font-size:1.2em;
-    							}
-
-
-						}
-						#project-select{
-							
-							height:50%;
-							
-							#project-select-container{
-								height:100%;
-
-								 .project-display {
-								height:100%;
-								}
-							}
-						}
-					}
-				#parallax2 {
-					height:35%;
-					padding:0;
-
-					#iron-wall	{
-						height:50%;
-						padding:0;
-						position:absolute;
-						z-index:5;
-						top:40%;
-								}
-
-					#iron-para	{
-						height:100%;
-						
-						.iron-body{
-							height:100%;
-							position:fixed;
-							
-							z-index:2;
-							top:366%;
-							bottom:0;
-							
-							left:63%;
-						}
-					}
-				}
-				#project-div-title{
-					height:15%;
-					background:$darkBlack;
-					z-index:5;
-					#brand-text {
-						font-size:5em;
-						font-family:Blockletter;
-						position:relative;
-						top:15%;
-						float:right;
-						color:$darkWhite;
-
-					}
-				}
-			}
-
-		}
-
-
-	}
-}
-
-
-
 
 @media screen and (min-width: 375px) {
 	#large-display{
-	
-	
-	
-	
+	perspective:1px;
+	overflow-x:hidden;
+	overflow-y:auto;
+	transform-style:preserve-3d;
 	height:100vh;
 	padding:0;
 		#parallax-base {
@@ -358,7 +29,7 @@ body{
 						height:100%;
 						position:fixed;
 						top:0;
-						
+						display:none;
 						transform:translateY(908px) translateX(-852px)translateZ(-1px) scale(2);
 					}
 				}
@@ -490,7 +161,7 @@ body{
 								
 								.exp-name {
 									border-bottom:4px solid $darkWhite;
-									font-size:2.5em;
+									font-size:1.5em;
 								}
 								.exp-date {
 									font-size:1.1em;
@@ -513,12 +184,12 @@ body{
 
 		#parallax-layer {
 			height:200vh;
-			position:absolute;
+			position:fixed;
 			top:203%;
 			
 			padding:0;
 			z-index:9;
-			
+			persepective:1px;
 			#projects{
 				height:100%;
 				padding:0;
@@ -591,7 +262,7 @@ body{
 												}
 					#iron-para{
 						height:100%;
-						
+						display:none;
 						.iron-body{
 							height:100%;
 							position:fixed;
@@ -627,9 +298,7 @@ body{
 }
 
 
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 320px) {
 	#large-display{
 	perspective:1px;
 	overflow-x:hidden;
@@ -649,21 +318,22 @@ body{
 					height:70%;
 					padding:0;
 					#houston-base{
-						height:100%;
+						height:60%;
 						position:absolute;
-						top:0;
+						top:75px;
 						z-index:2;
+
 					}
 					#houston-valk {
 						height:100%;
 						position:fixed;
 						top:0;
-						display:block;
+						display:none;
 						transform:translateY(908px) translateX(-852px)translateZ(-1px) scale(2);
 					}
 				}
 				#main-logo{
-					font-size:7em;
+					font-size:4.75em;
 					font-family:Blockletter;
 					color:$darkWhite;
 					float:right;
@@ -673,7 +343,7 @@ body{
 				}
 			}
 			#about {
-				height:100vh;
+				height:140vh;
 				position:relative;
 				z-index:4;
 				padding:0;
@@ -689,353 +359,36 @@ body{
 
 					#about-text-container{
 						
-						height:60%;
+						height:50%;
 						padding:0;
-						margin-bottom:4%;
-						#about-text {
-							border-left:7px solid $darkWhite;
-							border-bottom:3px solid $darkWhite;
-							margin-bottom:2%;
-							color:$darkWhite;
-							font-family:Blockletter;
-							background:$darkBlack;
-							font-size:1.5em;
-							padding:0;
-							height:47%;
-
-							.contact-links {
-								
-								height:71%;
-								padding:1%;
-								font-size:0.7em;
-								color:$darkWhite;
-								position:relative;
-								top:17%;
-
-								&:hover{
-									background:$darkWhite;
-									color:$darkBlack;
-								}
-								.contact-image{
-									height:88%;
-								}
-								.contact-text {
-									word-wrap:break-word;
-									border-bottom:3px solid $darkWhite;
-								}
-							}
-							#about-picture{
-								height:100%;
-								float:right;
-							}
-						}
-						#skill-container {
-							border-left:7px solid $darkWhite;
-							
-							float:right;
-							height:53%;
-							font-family:Blockletter;
-							background:$darkBlack;
-							#skill-title{
-								font-size:1.5em;
-							}
-
-							.skill {
-								
-
-								height:27%;
-
-								.skillnames {
-									border-bottom:1px solid $darkWhite;
-									font-size:1.2em;
-								}
-								.skilllvl{
-									height:50%;
-									
-									padding:0;
-
-									.lvlblk {
-										height:100%;
-										padding:4%;
-										width:1%;
-										margin-left:1%;
-										.col-md-1{
-											width:5%;
-
-										}
-										.col-lg-1{
-											width:5%;
-										}
-										.lvlblack {
-										background:$lightBlack;
-										
-										height:80%;
-										}
-									}
-
-
-								}
-							}
-
-						}
-
-					}
-
-						#exp-container{
-							border-left:7px solid $darkWhite;
-							border-top:3px solid $darkWhite;
-							height:39%;
-
-							.exp-div {
-								
-								height:100%;
-								font-family:Blockletter;
-								
-								.exp-name {
-									border-bottom:4px solid $darkWhite;
-									font-size:2em;
-								}
-								.exp-date {
-									font-size:1.3em;
-								}
-								.exp-position{
-									font-size:1.5em;
-								}
-								.exp-resp {
-									font-size:1.2em;
-								}
-							}
-						}
-				}
-				
-			}
-		}
-
-
-		/* Para2 starts here */
-
-		#parallax-layer {
-			height:200vh;
-			position:absolute;
-			top:203%;
-			
-			padding:0;
-			z-index:9;
-			persepective:1px;
-			#projects{
-				height:100%;
-				padding:0;
-				#image-container{
-					height:30%;
-					padding:0;
-					
-				}
-				#project-container{
-						height:18%;
-						padding:0;
-						color:$darkWhite;
-					
-
-						#project-detailss {
-							    border-left: 4px solid $darkWhite;
-    							float: right;
-							    z-index: 10;
-    							background: $darkBlack;
-    							top:-118%;
-    							font-family:Blockletter;
-
-    							#project-name {
-    								font-size:1.8em;
-
-    									.projects-name{
-    										border-bottom:3px solid $darkWhite;
-    									}
-    									.projects-framework{
-    										background:$darkWhite;
-    										color:$darkBlack;
-    									}
-    									.projects-link {
-    										color:$darkWhite;
-    										&:hover{
-    											background:$darkWhite;
-    											color:$darkBlack;
-    										}
-    									}
-    							}
-    							.projects-desc{
-    								font-size:1.5em;
-    							}
-
-
-						}
-						#project-select{
-							
-							height:50%;
-							position:absolute;
-								top:10%;
-							#project-select-container{
-								height:100%;
-
-								 .project-display {
-								height:100%;
-								}
-							}
-						}
-					}
-				#parallax2 {
-					height:35%;
-					padding:0;
-
-					#iron-wall{
-						height:100%;
-						padding:0;
-						position:absolute;
-						z-index:5;
-												}
-					#iron-para{
-						height:100%;
-						display:block;
-						.iron-body{
-							height:100%;
-							position:fixed;
-							transform:translateZ(-3px) translateY(100px) translateX(1000px) scale(2);
-							z-index:2;
-							top:366%;
-							bottom:0;
-							
-							left:63%;
-						}
-					}
-				}
-				#project-div-title{
-					height:15%;
-					background:$darkBlack;
-					z-index:5;
-					#brand-text {
-						font-size:15em;
-						font-family:Blockletter;
-						position:relative;
-						top:15%;
-						float:right;
-						color:$darkWhite;
-
-					}
-				}
-			}
-
-		}
-
-
-	}
-}
-
-
-
-
-/*MDPI laptop displays */
-@media screen and (min-width:1280px) {
-	#large-display{
-	perspective:1px;
-	overflow-x:hidden;
-	overflow-y:auto;
-	transform-style:preserve-3d;
-	height:100vh;
-	padding:0;
-		#parallax-base {
-			height:100%;
-			padding:0;
-			z-index:5;
-			#home {
-				height:100%;
-				padding:0;
-				z-index:4;
-				#bg-container {
-					height:70%;
-					padding:0;
-					#houston-base{
-						height:100%;
-						position:absolute;
-						top:0;
-						z-index:2;
-					}
-					#houston-valk {
-						display:block;
-						height:100%;
-						position:fixed;
-						top:0;
-						transform:translateY(608px) translateX(-852px)translateZ(-1px) scale(2);
-					}
-				}
-				#main-logo{
-					font-size:10em;
-					font-family:Blockletter;
-					color:$darkWhite;
-					float:right;
-					
-					height:30%;
-					background:$darkBlack;
-				}
-			}
-			#about {
-				height:100vh;
-				position:relative;
-				z-index:4;
-				padding:0;
-				color:$darkWhite;
-
-				#about-box {
-					float:right;
-					background:$darkBlack;
-					
-					height:100%;
-					padding:0;
-
-
-					#about-text-container{
 						
-						height:60%;
-						padding:0;
-						margin-bottom:4%;
 						#about-text {
 							border-left:7px solid $darkWhite;
 							border-bottom:3px solid $darkWhite;
-							margin-bottom:2%;
+							
 							color:$darkWhite;
 							font-family:Blockletter;
 							background:$darkBlack;
-							font-size:1.5em;
+							font-size:1.2em;
 							padding:0;
-							height:47%;
+							height:35%;
 
 							.contact-links {
 								
-								height:71%;
+								
 								padding:1%;
 								font-size:0.7em;
 								color:$darkWhite;
 								position:relative;
-								top:17%;
-
-								&:hover{
-									background:$darkWhite;
-									color:$darkBlack;
+								top:-65%;
+								margin-bottom:2%;
+								
+								.contact-image-mobile{
+								
 								}
-								.contact-image{
-									height:65%;
-								}
-								#contact-image2 {
-									height:80%;
-									position:relative;
-									top:-9%;
-								}
-
-								.contact-text {
+								.contact-text-mobile {
 									word-wrap:break-word;
 									border-bottom:3px solid $darkWhite;
-								}
-								#contact-text2{
-									position:relative;
-									top:-1%;
 								}
 							}
 							#about-picture{
@@ -1047,77 +400,77 @@ body{
 							border-left:7px solid $darkWhite;
 							
 							float:right;
-							height:53%;
+							height:65%;
 							font-family:Blockletter;
 							background:$darkBlack;
 							#skill-title{
-								font-size:1.5em;
+								font-size:1.2em;
 							}
 
 							.skill {
 								
 
-								height:27%;
+								height:14%;
 
 								.skillnames {
 									border-bottom:1px solid $darkWhite;
-									font-size:1.2em;
-								}
-								.skilllvl{
-									height:50%;
-									
-									padding:0;
-
-									.lvlblk {
-										height:100%;
-										padding:4%;
-										width:1%;
-										margin-left:1%;
-										.col-md-1{
-											width:5%;
-
-										}
-										.col-lg-1{
-											width:5%;
-										}
-										.lvlblack {
-										background:$lightBlack;
-										
-										height:80%;
-										}
-									}
-
-
-								}
-							}
-
-						}
-
-					}
-
-						#exp-container{
-							border-left:7px solid $darkWhite;
-							border-top:3px solid $darkWhite;
-							height:39%;
-
-							.exp-div {
-								
-								height:100%;
-								font-family:Blockletter;
-								
-								.exp-name {
-									border-bottom:4px solid $darkWhite;
-									font-size:1.7em;
-								}
-								.exp-date {
-									font-size:1.2em;
-								}
-								.exp-position{
-									font-size:1.5em;
-								}
-								.exp-resp {
 									font-size:1.1em;
 								}
+								.skilllvl{
+									height:83%;
+									
+									padding:0;
+
+									.lvlblk {
+										height:100%;
+										padding:4%;
+										width:1%;
+										margin-left:1%;
+										.col-md-1{
+											width:5%;
+
+										}
+										.col-lg-1{
+											width:5%;
+										}
+										.lvlblack {
+										background:$lightBlack;
+										
+										height:80%;
+										}
+									}
+
+
+								}
+							}
+
+						}
+
+					}
+
+						#exp-container{
+							border-left:7px solid $darkWhite;
+							border-top:3px solid $darkWhite;
+							height:24%;
+							
+							.exp-div {
+								margin-bottom:9%;
+								height:20%;
+								font-family:Blockletter;
+								
+								.exp-name {
+									border-bottom:4px solid $darkWhite;
+									font-size:1.2em;
+								}
+								.exp-date {
+									font-size:0.82em;
+								}
+								.exp-position{
+									font-size:1.4em;
+								}
+								.exp-resp {
+									font-size:1.2em;
+								}
 							}
 						}
 				}
@@ -1130,7 +483,7 @@ body{
 
 		#parallax-layer {
 			height:200vh;
-			position:absolute;
+			position:fixed;
 			top:203%;
 			
 			padding:0;
@@ -1152,10 +505,10 @@ body{
 
 						#project-detailss {
 							    border-left: 4px solid $darkWhite;
-    							float: right;
-							    z-index: 10;
+    							
+							    
     							background: $darkBlack;
-    							top:-151%;
+    							
     							font-family:Blockletter;
 
     							#project-name {
@@ -1177,7 +530,7 @@ body{
     									}
     							}
     							.projects-desc{
-    								font-size:1.5em;
+    								font-size:1.2em;
     							}
 
 
@@ -1185,8 +538,7 @@ body{
 						#project-select{
 							
 							height:50%;
-							position:absolute;
-								top:10%;
+							
 							#project-select-container{
 								height:100%;
 
@@ -1201,14 +553,15 @@ body{
 					padding:0;
 
 					#iron-wall{
-						height:100%;
+						height:50%;
 						padding:0;
 						position:absolute;
 						z-index:5;
+						top:40%;
 												}
 					#iron-para{
 						height:100%;
-						display:block;
+						display:none;
 						.iron-body{
 							height:100%;
 							position:fixed;
@@ -1226,7 +579,7 @@ body{
 					background:$darkBlack;
 					z-index:5;
 					#brand-text {
-						font-size:10em;
+						font-size:5em;
 						font-family:Blockletter;
 						position:relative;
 						top:15%;
@@ -1242,8 +595,6 @@ body{
 
 	}
 }
-
-
 
 /* Most Macs */
 
@@ -1550,6 +901,622 @@ body{
 }
 
 
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+	#large-display{
+	perspective:1px;
+	overflow-x:hidden;
+	overflow-y:auto;
+	transform-style:preserve-3d;
+	height:100vh;
+	padding:0;
+		#parallax-base {
+			height:100%;
+			padding:0;
+			z-index:5;
+			#home {
+				height:100%;
+				padding:0;
+				z-index:4;
+				#bg-container {
+					height:70%;
+					padding:0;
+					#houston-base{
+						height:100%;
+						position:absolute;
+						top:0;
+						z-index:2;
+					}
+					#houston-valk {
+						height:100%;
+						position:fixed;
+						top:0;
+						display:block;
+						transform:translateY(908px) translateX(-852px)translateZ(-1px) scale(2);
+					}
+				}
+				#main-logo{
+					font-size:7em;
+					font-family:Blockletter;
+					color:$darkWhite;
+					float:right;
+					
+					height:30%;
+					background:$darkBlack;
+				}
+			}
+			#about {
+				height:100vh;
+				position:relative;
+				z-index:4;
+				padding:0;
+				color:$darkWhite;
+
+				#about-box {
+					float:right;
+					background:$darkBlack;
+					
+					height:100%;
+					padding:0;
+
+
+					#about-text-container{
+						
+						height:60%;
+						padding:0;
+						margin-bottom:4%;
+						#about-text {
+							border-left:7px solid $darkWhite;
+							border-bottom:3px solid $darkWhite;
+							margin-bottom:2%;
+							color:$darkWhite;
+							font-family:Blockletter;
+							background:$darkBlack;
+							font-size:1.5em;
+							padding:0;
+							height:47%;
+
+							.contact-links {
+								
+								height:71%;
+								padding:1%;
+								font-size:0.7em;
+								color:$darkWhite;
+								position:relative;
+								top:17%;
+
+								&:hover{
+									background:$darkWhite;
+									color:$darkBlack;
+								}
+								.contact-image{
+									height:88%;
+								}
+								.contact-text {
+									word-wrap:break-word;
+									border-bottom:3px solid $darkWhite;
+								}
+							}
+							#about-picture{
+								height:100%;
+								float:right;
+							}
+						}
+						#skill-container {
+							border-left:7px solid $darkWhite;
+							
+							float:right;
+							height:53%;
+							font-family:Blockletter;
+							background:$darkBlack;
+							#skill-title{
+								font-size:1.5em;
+							}
+
+							.skill {
+								
+
+								height:27%;
+
+								.skillnames {
+									border-bottom:1px solid $darkWhite;
+									font-size:1.2em;
+								}
+								.skilllvl{
+									height:50%;
+									
+									padding:0;
+
+									.lvlblk {
+										height:100%;
+										padding:4%;
+										width:1%;
+										margin-left:1%;
+										.col-md-1{
+											width:5%;
+
+										}
+										.col-lg-1{
+											width:5%;
+										}
+										.lvlblack {
+										background:$lightBlack;
+										
+										height:80%;
+										}
+									}
+
+
+								}
+							}
+
+						}
+
+					}
+
+						#exp-container{
+							border-left:7px solid $darkWhite;
+							border-top:3px solid $darkWhite;
+							height:39%;
+
+							.exp-div {
+								
+								height:100%;
+								font-family:Blockletter;
+								
+								.exp-name {
+									border-bottom:4px solid $darkWhite;
+									font-size:2em;
+								}
+								.exp-date {
+									font-size:1.3em;
+								}
+								.exp-position{
+									font-size:1.5em;
+								}
+								.exp-resp {
+									font-size:1.2em;
+								}
+							}
+						}
+				}
+				
+			}
+		}
+
+
+		/* Para2 starts here */
+
+		#parallax-layer {
+			height:200vh;
+			position:fixed;
+			top:203%;
+			
+			padding:0;
+			z-index:9;
+			persepective:1px;
+			#projects{
+				height:100%;
+				padding:0;
+				#image-container{
+					height:30%;
+					padding:0;
+					
+				}
+				#project-container{
+						height:18%;
+						padding:0;
+						color:$darkWhite;
+					
+
+						#project-detailss {
+							    border-left: 4px solid $darkWhite;
+    							float: right;
+							    z-index: 10;
+    							background: $darkBlack;
+    							top:-118%;
+    							font-family:Blockletter;
+
+    							#project-name {
+    								font-size:1.8em;
+
+    									.projects-name{
+    										border-bottom:3px solid $darkWhite;
+    									}
+    									.projects-framework{
+    										background:$darkWhite;
+    										color:$darkBlack;
+    									}
+    									.projects-link {
+    										color:$darkWhite;
+    										&:hover{
+    											background:$darkWhite;
+    											color:$darkBlack;
+    										}
+    									}
+    							}
+    							.projects-desc{
+    								font-size:1.5em;
+    							}
+
+
+						}
+						#project-select{
+							
+							height:50%;
+							position:absolute;
+								top:10%;
+							#project-select-container{
+								height:100%;
+
+								 .project-display {
+								height:100%;
+								}
+							}
+						}
+					}
+				#parallax2 {
+					height:35%;
+					padding:0;
+
+					#iron-wall{
+						height:100%;
+						padding:0;
+						position:absolute;
+						z-index:5;
+												}
+					#iron-para{
+						height:100%;
+						display:block;
+						.iron-body{
+							height:100%;
+							position:fixed;
+							transform:translateZ(-3px) translateY(100px) translateX(1000px) scale(2);
+							z-index:2;
+							top:366%;
+							bottom:0;
+							
+							left:63%;
+						}
+					}
+				}
+				#project-div-title{
+					height:15%;
+					background:$darkBlack;
+					z-index:5;
+					#brand-text {
+						font-size:15em;
+						font-family:Blockletter;
+						position:relative;
+						top:15%;
+						float:right;
+						color:$darkWhite;
+
+					}
+				}
+			}
+
+		}
+
+
+	}
+}
+
+
+/*MDPI laptop displays */
+@media screen and (min-width:1280px) {
+	#large-display{
+	perspective:1px;
+	overflow-x:hidden;
+	overflow-y:auto;
+	transform-style:preserve-3d;
+	height:100vh;
+	padding:0;
+		#parallax-base {
+			height:100%;
+			padding:0;
+			z-index:5;
+			#home {
+				height:100%;
+				padding:0;
+				z-index:4;
+				#bg-container {
+					height:70%;
+					padding:0;
+					#houston-base{
+						height:100%;
+						position:absolute;
+						top:0;
+						z-index:2;
+					}
+					#houston-valk {
+						display:block;
+						height:100%;
+						position:fixed;
+						top:0;
+						transform:translateY(608px) translateX(-852px)translateZ(-1px) scale(2);
+					}
+				}
+				#main-logo{
+					font-size:10em;
+					font-family:Blockletter;
+					color:$darkWhite;
+					float:right;
+					
+					height:30%;
+					background:$darkBlack;
+				}
+			}
+			#about {
+				height:100vh;
+				position:relative;
+				z-index:4;
+				padding:0;
+				color:$darkWhite;
+
+				#about-box {
+					float:right;
+					background:$darkBlack;
+					
+					height:100%;
+					padding:0;
+
+
+					#about-text-container{
+						
+						height:60%;
+						padding:0;
+						margin-bottom:4%;
+						#about-text {
+							border-left:7px solid $darkWhite;
+							border-bottom:3px solid $darkWhite;
+							margin-bottom:2%;
+							color:$darkWhite;
+							font-family:Blockletter;
+							background:$darkBlack;
+							font-size:1.5em;
+							padding:0;
+							height:47%;
+
+							.contact-links {
+								
+								height:71%;
+								padding:1%;
+								font-size:0.7em;
+								color:$darkWhite;
+								position:relative;
+								top:17%;
+
+								&:hover{
+									background:$darkWhite;
+									color:$darkBlack;
+								}
+								.contact-image{
+									height:65%;
+								}
+								#contact-image2 {
+									height:80%;
+									position:relative;
+									top:-9%;
+								}
+
+								.contact-text {
+									word-wrap:break-word;
+									border-bottom:3px solid $darkWhite;
+								}
+								#contact-text2{
+									position:relative;
+									top:-1%;
+								}
+							}
+							#about-picture{
+								height:100%;
+								float:right;
+							}
+						}
+						#skill-container {
+							border-left:7px solid $darkWhite;
+							
+							float:right;
+							height:53%;
+							font-family:Blockletter;
+							background:$darkBlack;
+							#skill-title{
+								font-size:1.5em;
+							}
+
+							.skill {
+								
+
+								height:27%;
+
+								.skillnames {
+									border-bottom:1px solid $darkWhite;
+									font-size:1.2em;
+								}
+								.skilllvl{
+									height:50%;
+									
+									padding:0;
+
+									.lvlblk {
+										height:100%;
+										padding:4%;
+										width:1%;
+										margin-left:1%;
+										.col-md-1{
+											width:5%;
+
+										}
+										.col-lg-1{
+											width:5%;
+										}
+										.lvlblack {
+										background:$lightBlack;
+										
+										height:80%;
+										}
+									}
+
+
+								}
+							}
+
+						}
+
+					}
+
+						#exp-container{
+							border-left:7px solid $darkWhite;
+							border-top:3px solid $darkWhite;
+							height:39%;
+
+							.exp-div {
+								
+								height:100%;
+								font-family:Blockletter;
+								
+								.exp-name {
+									border-bottom:4px solid $darkWhite;
+									font-size:1.7em;
+								}
+								.exp-date {
+									font-size:1.2em;
+								}
+								.exp-position{
+									font-size:1.5em;
+								}
+								.exp-resp {
+									font-size:1.1em;
+								}
+							}
+						}
+				}
+				
+			}
+		}
+
+
+		/* Para2 starts here */
+
+		#parallax-layer {
+			height:200vh;
+			position:fixed;
+			top:203%;
+			
+			padding:0;
+			z-index:9;
+			persepective:1px;
+			#projects{
+				height:100%;
+				padding:0;
+				#image-container{
+					height:30%;
+					padding:0;
+					
+				}
+				#project-container{
+						height:18%;
+						padding:0;
+						color:$darkWhite;
+					
+
+						#project-detailss {
+							    border-left: 4px solid $darkWhite;
+    							float: right;
+							    z-index: 10;
+    							background: $darkBlack;
+    							top:-151%;
+    							font-family:Blockletter;
+
+    							#project-name {
+    								font-size:1.8em;
+
+    									.projects-name{
+    										border-bottom:3px solid $darkWhite;
+    									}
+    									.projects-framework{
+    										background:$darkWhite;
+    										color:$darkBlack;
+    									}
+    									.projects-link {
+    										color:$darkWhite;
+    										&:hover{
+    											background:$darkWhite;
+    											color:$darkBlack;
+    										}
+    									}
+    							}
+    							.projects-desc{
+    								font-size:1.5em;
+    							}
+
+
+						}
+						#project-select{
+							
+							height:50%;
+							position:absolute;
+								top:10%;
+							#project-select-container{
+								height:100%;
+
+								 .project-display {
+								height:100%;
+								}
+							}
+						}
+					}
+				#parallax2 {
+					height:35%;
+					padding:0;
+
+					#iron-wall{
+						height:100%;
+						padding:0;
+						position:absolute;
+						z-index:5;
+												}
+					#iron-para{
+						height:100%;
+						display:block;
+						.iron-body{
+							height:100%;
+							position:fixed;
+							transform:translateZ(-3px) translateY(100px) translateX(1000px) scale(2);
+							z-index:2;
+							top:366%;
+							bottom:0;
+							
+							left:63%;
+						}
+					}
+				}
+				#project-div-title{
+					height:15%;
+					background:$darkBlack;
+					z-index:5;
+					#brand-text {
+						font-size:10em;
+						font-family:Blockletter;
+						position:relative;
+						top:15%;
+						float:right;
+						color:$darkWhite;
+
+					}
+				}
+			}
+
+		}
+
+
+	}
+}
+
+
+
 /*Large screen desktop displays */
 @media screen and (min-width:1920px) {
 	#large-display{
@@ -1852,4 +1819,3 @@ body{
 
 	}
 }
-

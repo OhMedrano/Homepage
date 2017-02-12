@@ -199,7 +199,7 @@ function HomePage(){
 			baseBG.style.cssText = 'background:url('+houston[0].currentSrc+')no-repeat;background-size:100%100%;background-position:center;';
 			bgContainer.append(baseBG);
 
-	var valkyre = new divCreate('houston-valk','col-xs-12 col-sm-12 col-md-12 col-lg-12');
+	var valkyre = new divCreate('houston-valk','hidden-sm hidden-xs col-md-12 col-lg-12');
 		valkyre.style.cssText = 'background:url('+houston[3].currentSrc+')no-repeat;background-size:100%100%;background-position:center;';
 			bgContainer.append(valkyre);
 	mainbrand.append(brandText);
@@ -238,7 +238,7 @@ function AboutPage(){
 		{"name":"HTML5","level":9},
 		{"name":"CSS/SCSS","level":9},
 		{"name":"Adobe Illustrator CS6","level":8},
-		{"name":"Adobe Photoshop CS6","level":8},
+		{"name":"Adobe Photoshop CS6","level":7},
 		{"name":"Hardware Repair","level":10}
 	];
 
@@ -301,12 +301,12 @@ function AboutPage(){
   		var expdiv = document.createElement('div');
 
   		expdiv.setAttribute('id',exp.name);
-		expdiv.setAttribute('class','col-xs-3 col-sm-4 col-md-4 col-lg-4 exp-div');
+		expdiv.setAttribute('class','col-xs-12 col-sm-12 col-md-4 col-lg-4 exp-div');
 		
-		var expname = new divCreate(null,'col-xs-12 col-sm-12 col-md-12 col-lg-12 exp-name');
+		var expname = new divCreate(null,'col-xs-6 col-sm-6 col-md-12 col-lg-12 exp-name');
 		expname.innerHTML = `<span class="">${exp.name}</span>`;
 
-		var expdate = new divCreate(null,'col-xs-12 col-sm-12 col-md-12 col-lg-12 exp-date')
+		var expdate = new divCreate(null,'col-xs-6 col-sm-6 col-md-12 col-lg-12 exp-date')
 		if(exp.present){
 			expdate.innerHTML = `<span class="">${exp.startDate} - Present</span>`;
 		} else {
@@ -317,7 +317,7 @@ function AboutPage(){
 		expposition.innerHTML = `<span class="">${exp.position}</span>`;
 
 
-		var expresp = new divCreate(null,'col-xs-12 col-sm-12 col-md-12 col-lg-12 exp-resp ' + exp.name+'-respon')
+		var expresp = new divCreate(null,'hidden-sm hidden-xs col-md-12 col-lg-12 exp-resp ' + exp.name+'-respon')
 		
 		for(var x=0;x<exp.respon.length;x++){
 			var res = new divCreate(null,'col-xs-12 col-sm-12 col-md-12 col-lg-12 group-resp ' +'resp'+x);
@@ -387,11 +387,11 @@ function AboutPage(){
 
 	var aboutText = new divCreate('about-text','col-xs-12 col-sm-12 col-md-12 col-lg-12');
 	var textstuff = 'I like to code, and play guitar when I\'m stuck.';
-	var text = `<span class="col-xs-12 col-sm-12 col-md-8 col-lg-8 inner-text">${textstuff}</span>`;
+	var text = `<span class="col-xs-8 col-sm-8 col-md-8 col-lg-8 inner-text">${textstuff}</span>`;
 
 	aboutText.innerHTML = text;
 
-	var picture = new divCreate('about-picture','col-xs-12 col-sm-12 col-md-3 col-lg-3');
+	var picture = new divCreate('about-picture','col-xs-4 col-sm-4 col-md-3 col-lg-3');
 	picture.style.cssText = 'background:url(../images/face.png)no-repeat;background-size:100% 120%;background-position-x:99%;background-position-y:0%;'
 	aboutText.append(picture);
 
@@ -399,15 +399,21 @@ function AboutPage(){
 	for(var q=0;q<contactinfo.length;q++){
   		var contact = contactinfo[q];
   		var contactlink = document.createElement('a');
-  		contactlink.setAttribute('href',contact.web);
+  		contactlink.setAttribute('href',contact.link);
   		contactlink.setAttribute('class','col-xs-12 col-sm-12 col-md-2 col-lg-2 contact-links');
 
-  		var contactImage = new divCreate('contact-image'+q,'col-xs-12 col-sm-12 col-md-12 col-lg-12 contact-image');
+  		var contactImage = new divCreate('contact-image'+q,'hidden-sm hidden-xs col-md-12 col-lg-12 contact-image');
   		contactImage.style.cssText = 'background:url('+contact.img+')no-repeat;background-size:50%50%;background-position:center;';
-  		var contactText = new divCreate('contact-text'+q,'col-xs-12 col-sm-12 col-md-12 col-lg-12 contact-text');
+  		var contactText = new divCreate('contact-text'+q,'hidden-sm hidden-xs col-md-12 col-lg-12 contact-text');
 		contactText.innerHTML = contact.text;
 
-		contactlink.append(contactImage,contactText);  		
+		var contactImageMobile = new divCreate('contact-image'+q,'col-xs-3 col-sm-3 hidden-lg hidden-md contact-image-mobile');
+  		contactImageMobile.innerHTML = contact.type;
+  		var contactTextMobile = new divCreate('contact-text'+q,'col-xs-5 col-sm-5 hidden-lg hidden-md contact-text-mobile');
+		contactTextMobile.innerHTML = contact.text;
+
+
+		contactlink.append(contactImage,contactText,contactImageMobile,contactTextMobile);  		
   		aboutText.append(contactlink);
 
   		console.log('sup');
@@ -548,7 +554,7 @@ function ProjectPage(){
    			
 
 
-   			var projectDisplay = new divCreate('project'+i,'col-xs-12 col-sm-12 col-md-4 col-lg-4 project-display');
+   			var projectDisplay = new divCreate('project'+i,'col-xs-6 col-sm-6 col-md-4 col-lg-4 project-display');
    			projectDisplay.setAttribute('projectId',i);
    			projectDisplay.style.cssText = `background:url(${project.img})no-repeat;background-size:80% 80%;background-position:center;`;
 
@@ -598,7 +604,7 @@ function ProjectPage(){
 
    		ironBG.style.cssText = 'background:url('+ironman[0].currentSrc+')no-repeat;background-size:100%100%;background-position:center;';
 
-   		var ironPara = new divCreate('iron-para','col-xs-12 col-sm-12 col-md-12 col-lg-12');
+   		var ironPara = new divCreate('iron-para','hidden-xs hidden-sm col-md-12 col-lg-12');
 
    		for(var v=1;v<ironman.length;v++){
    			
@@ -632,13 +638,14 @@ var body = document.querySelector('body');
 var bodycon = new divCreate('body-container','col-xs-12 col-sm-12 col-md-12 col-lg-12');
 var container = new divCreate('content-container','col-xs-12 col-sm-12 col-md-12 col-lg-12');
 
-var paraLargeBG = new divCreate('large-display','hidden-xs hidden-sm col-md-12 col-lg-12 parallax');
+var paraLargeBG = new divCreate('large-display','col-xs-12 col-sm-12 col-md-12 col-lg-12 parallax');
 var paraSmallBG = new divCreate('small-display','hidden-md hidden-lg col-xs-12 col-sm-12');
 var para1 = new divCreate('parallax-base','col-xs-12 col-sm-12 col-md-12 col-lg-12 parallax-layer');
 var para2 = new divCreate('parallax-layer','col-xs-12 col-sm-12 col-md-12 col-lg-12 parallax-layer');
 
 para1.append(HomePage(),AboutPage());
 para2.append(ProjectPage());
+
 
 var bodycontent = [HomePage(),AboutPage(),ProjectPage()];
 
@@ -652,7 +659,7 @@ paraLargeBG.append(para1,para2);
 
 bodycon.append(container);
 
-body.append(paraLargeBG,paraSmallBG);
+body.append(paraLargeBG);
 
 
 
