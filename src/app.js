@@ -44,9 +44,9 @@ function preloadPics(picURL,callback){
 var sources = ['../images/houston/','../images/ironman/'];
 
 /* Houston has 5 parts*/
-var houston = new preloadPics([sources[0]+'baseBG.jpg',sources[0]+'layer1BG.png',sources[0]+'layer2BG.png',sources[0]+'layer3BG.png',sources[0]+'layer4BG.png']);
+var houston = [sources[0]+'baseBG.jpg',sources[0]+'layer1BG.png',sources[0]+'layer2BG.png',sources[0]+'layer3BG.png',sources[0]+'layer4BG.png'];
 
-var ironman = new preloadPics([sources[1]+'baseBG.png',sources[1]+'layer1BG.png',sources[1]+'layer2BG.png',sources[1]+'layer3BG.png',sources[1]+'layer4BG.png',sources[1]+'layer5BG.png',sources[1]+'layer6BG.png',sources[1]+'layer7BG.png']);
+var ironman = [sources[1]+'baseBG.png',sources[1]+'layer1BG.png',sources[1]+'layer2BG.png',sources[1]+'layer3BG.png',sources[1]+'layer4BG.png',sources[1]+'layer5BG.png',sources[1]+'layer6BG.png',sources[1]+'layer7BG.png'];
 
 
 console.log(ironman);
@@ -64,6 +64,9 @@ function changelink(num){
 		My really ghetto client end routing 
 
 		...for now
+
+
+		Not being used, saving the code to look back at later.
 */
 
 var linknum = 2;
@@ -192,22 +195,25 @@ function HomePage(){
 	var brandText = new divCreate('brand-text','col-xs-12 col-sm-12 col-md-6 col-lg-6');
 
 	brandText.innerHTML = 'THE BIG OH';
+	var infotext = new divCreate('info-text','col-xs-12 col-sm-12 col-md-6 col-lg-6');
+
+	infotext.innerHTML = `<span id="info-pretext"class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Homepage made in Javascript</span><a href="http://github.com/ohmedrano/homepage"class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Check out the repo here...</a>`;
 
 	var bgContainer = new divCreate('bg-container','col-xs-12 col-sm-12 col-md-12 col-lg-12 houston-parallax');
 
 	var baseBG = new divCreate('houston-base','col-xs-12 col-sm-12 col-md-12 col-lg-12 houston-parallax-stuff houston-parallax-base');
-			baseBG.style.cssText = 'background:url('+houston[0].currentSrc+')no-repeat;background-size:100%100%;background-position:center;';
+			baseBG.style.cssText = 'background:url(../images/houston/baseBG.jpg)no-repeat;background-size:100%100%;background-position:center;';
 			bgContainer.append(baseBG);
 
 	var valkyre = new divCreate('houston-valk','hidden-sm hidden-xs col-md-12 col-lg-12');
-		valkyre.style.cssText = 'background:url('+houston[3].currentSrc+')no-repeat;background-size:100%100%;background-position:center;';
+		valkyre.style.cssText = 'background:url(../images/houston/layer3BG.png)no-repeat;background-size:100%100%;background-position:center;';
 			bgContainer.append(valkyre);
-	mainbrand.append(brandText);
+	mainbrand.append(brandText,infotext);
 	var main2 = new divCreate('main-logoo','col-xs-12 col-sm-12 col-md-12 col-lg-12');
 	container.append(bgContainer,mainbrand,main2);
 		
 	
-
+	console.log('aayyyy');
 		
 
 
@@ -602,7 +608,7 @@ function ProjectPage(){
 
    		var ironBG = new divCreate('iron-wall','col-xs-12 col-sm-12 col-md-12 col-lg-12');
 
-   		ironBG.style.cssText = 'background:url('+ironman[0].currentSrc+')no-repeat;background-size:100%100%;background-position:center;';
+   		ironBG.style.cssText = `background:url(../images/ironman/baseBG.png)no-repeat;background-size:100%100%;background-position:center;`;
 
    		var ironPara = new divCreate('iron-para','hidden-xs hidden-sm col-md-12 col-lg-12');
 
@@ -611,7 +617,7 @@ function ProjectPage(){
 
    			var ironbody = new divCreate('iron'+v,'col-xs-12 col-sm-12 col-md-12 col-lg-12 iron-body');
 
-   			ironbody.style.cssText = 'background:url('+ironman[v].currentSrc+')no-repeat;background-size:100%100%;background-position:center;';
+   			ironbody.style.cssText = `background:url(${ironman[v]})no-repeat;background-size:100%100%;background-position:center;`;
 
    			ironPara.append(ironbody);
    		}

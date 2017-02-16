@@ -38,12 +38,15 @@ body {
             position: fixed;
             top: 0; }
         #large-display #parallax-base #home #main-logo {
-          font-size: 4.75em;
+          font-size: 14.75em;
           font-family: Blockletter;
           color: #81818A;
           float: right;
           height: 30%;
           background: #252529; }
+          #large-display #parallax-base #home #main-logo #info-text {
+            font-size: 0.1em;
+            text-align: right; }
       #large-display #parallax-base #about {
         height: 140vh;
         position: relative;
@@ -921,7 +924,7 @@ body {
                 font-size: 1.2em; }
     #large-display #parallax-layer {
       height: 200vh;
-      position: fixed;
+      position: absolute;
       top: 203%;
       padding: 0;
       z-index: 9;
