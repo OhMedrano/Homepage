@@ -61,7 +61,7 @@ body{
 					}
 				}
 				#main-logo{
-					font-size:14.75em;
+					font-size:2.75em;
 					font-family:Blockletter;
 					color:$darkWhite;
 					float:right;
@@ -69,13 +69,10 @@ body{
 					height:30%;
 					background:$darkBlack;
 
-
 					#info-text {
-						font-size:0.1em;
-
+						font-size:0.4em;
 						text-align:right;
 					}
-
 				}
 			}
 			#about {
@@ -378,6 +375,11 @@ body{
 					
 					height:30%;
 					background:$darkBlack;
+
+					#info-text {
+						font-size:0.2em;
+						text-align:right;
+					}
 				}
 			}
 			#about {
@@ -678,6 +680,11 @@ body{
 					
 					height:30%;
 					background:$darkBlack;
+
+					#info-text {
+						font-size:0.2em;
+						text-align:right;
+					}
 				}
 			}
 			#about {
@@ -982,6 +989,11 @@ body{
 					
 					height:30%;
 					background:$darkBlack;
+
+					#info-text {
+						font-size:0.2em;
+						text-align:right;
+					}
 				}
 			}
 			#about {
@@ -1297,6 +1309,11 @@ body{
 					
 					height:30%;
 					background:$darkBlack;
+
+					#info-text {
+						font-size:0.2em;
+						text-align:right;
+					}
 				}
 			}
 			#about {
@@ -1600,6 +1617,11 @@ body{
 					
 					height:30%;
 					background:$darkBlack;
+
+					#info-text {
+						font-size:0.1em;
+						text-align:right;
+					}
 				}
 			}
 			#about {
@@ -1654,6 +1676,16 @@ body{
 									border-bottom:3px solid $darkWhite;
 								}
 							}
+
+							.contact-link-2{
+								height:71%;
+								padding:1%;
+								font-size:0.7em;
+								color:$darkWhite;
+								position:relative;
+								top:22%;
+							}
+
 							#about-picture{
 								height:100%;
 								float:right;

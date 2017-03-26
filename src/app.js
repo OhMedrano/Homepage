@@ -406,7 +406,7 @@ function AboutPage(){
   		var contact = contactinfo[q];
   		var contactlink = document.createElement('a');
   		contactlink.setAttribute('href',contact.link);
-  		contactlink.setAttribute('class','col-xs-12 col-sm-12 col-md-2 col-lg-2 contact-links');
+  		contactlink.setAttribute('class','col-xs-12 col-sm-12 col-md-2 col-lg-2 contact-links contact-link-'+q);
 
   		var contactImage = new divCreate('contact-image'+q,'hidden-sm hidden-xs col-md-12 col-lg-12 contact-image');
   		contactImage.style.cssText = 'background:url('+contact.img+')no-repeat;background-size:50%50%;background-position:center;';
@@ -456,23 +456,14 @@ function ProjectPage(){
    				'done':true
    				},
    				{
-   				'name':'Not a PokeDex',
-   				'web':'http://notpokeDex.thebigoh.net',
-   				 'framework':'AngularJS',
-   				 'img':'http://i.imgur.com/Vs3r5Jm.png?1',
+   				'name':'Not a PokeDex (Still in development)',
+   				'web':'http://reactdex.thebigoh.net',
+   				 'framework':'ReactJS',
+   				 'img':'http://i.imgur.com/7UGoStl.png?1',
    				 'descs':['...Yeah, I made a pokeDex.',
    				 		  'Tried to make it look like it came from one of the games, currently does not display the most recent generation of pokemon',
-   						  'I wanted to manipulate big data with tons of relations, except without staring at lots of numbers and random names. The images are not owned by me.'],
+   						  'I wanted to manipulate big data with tons of relations, except without staring at lots of numbers and random names. The pokemon and pokemon images are not owned by me.'],
    				 'done':false
-   				},
-   				{
-   				'name':'Mock travel website',
-   				'web':'http://elsy2.thebigoh.net',
-   				'framework':'AngularJS',
-   				'img':'http://i.imgur.com/cnvN0DR.png?1',
-   				'descs':['Guilt tripped into making a site for my mom.',
-   						 'Not responsive at the moment',
-   						 'Made with a NodeJS backend to handle management of project']
    				},
    				{
    				'name':'AtaByte Hosting',
@@ -485,16 +476,6 @@ function ProjectPage(){
    				'done':true
    				},
         		{
-        		'name':'Coding Blog',
-        		'web':'http://blog.theBigOh.net',
-        		'framework':'MEAN Stack',
-        		'img':'http://i.imgur.com/n2XT1Kp.png?1',
-        		'descs':['Personal blog where I either talk about what I\'m coding or what I\'m being distracted by',
-        				 'AngularJS for the front-end',
-        				 'Made with NodeJS/ExpressJS for the back-end',],
-        		'done':true
-        		},
-       			{
        			'name':'Vega Built Gaming',
        			'web':'http://vegaBuild.thebigoh.net',
          		'framework':'AngularJS/MEAN',
