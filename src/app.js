@@ -213,7 +213,7 @@ function HomePage(){
 	container.append(bgContainer,mainbrand,main2);
 		
 	
-	console.log('aayyyy');
+	console.log('...Why are you reading this?');
 		
 
 
@@ -392,8 +392,8 @@ function AboutPage(){
 	
 
 	var aboutText = new divCreate('about-text','col-xs-12 col-sm-12 col-md-12 col-lg-12');
-	var textstuff = 'I like to code, and play guitar when I\'m stuck.';
-	var text = `<span class="col-xs-8 col-sm-8 col-md-8 col-lg-8 inner-text">${textstuff}</span>`;
+	var textstuff = ['Freelance Web developer and Graphics Designer \/\/ Raised and based in NYC'];
+	var text = `<span class="col-xs-8 col-sm-8 col-md-8 col-lg-8 inner-text">${textstuff[0]}</span>`;
 
 	aboutText.innerHTML = text;
 
@@ -422,7 +422,7 @@ function AboutPage(){
 		contactlink.append(contactImage,contactText,contactImageMobile,contactTextMobile);  		
   		aboutText.append(contactlink);
 
-  		console.log('sup');
+  		
   	}
 
 	aboutme.append(aboutText,skillcon);
@@ -433,7 +433,7 @@ function AboutPage(){
 
   	container.append(newcontainer);
 	
-  	console.log('hey');
+  	;
 	return container;
 }
 /**/
@@ -449,10 +449,8 @@ function ProjectPage(){
    				'name':'Guitar Tools',
    				'web':'http://guitar.thebigoh.net',
    				'framework':'AngularJS',
-   				'img':'http://i.imgur.com/3VPN6nK.jpg?1',
-   				'descs':['A couple of web apps I made to help guitarists, beginner and experts, unlock the secrets of the fretboard',
-   						'One web app is a virtual fretboard which a guitarist can custom tune to any tuning they choose and select a scale or chord in relative to that tuning',
-   						'The other web app is a mapping of all the possible harmonic sweet spots, something that Eddie Van Halen would be very mad about.'],				
+   				'img':'http://i.imgur.com/b4bmsg2.png?1',
+   				'descs':['A web tool for guitarists to better visualize scales on a fretboard','Custom tuning and lefty mode options','Useful for beginners and experts (That\'s from first hand experience). '],				
    				'done':true
    				},
    				{
@@ -541,7 +539,7 @@ function ProjectPage(){
    			
 
 
-   			var projectDisplay = new divCreate('project'+i,'col-xs-6 col-sm-6 col-md-4 col-lg-4 project-display');
+   			var projectDisplay = new divCreate('project'+i,'col-xs-6 col-sm-6 col-md-6 col-lg-6 project-display');
    			projectDisplay.setAttribute('projectId',i);
    			projectDisplay.style.cssText = `background:url(${project.img})no-repeat;background-size:80% 80%;background-position:center;`;
 

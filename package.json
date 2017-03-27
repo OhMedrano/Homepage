@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --progress --colors --inline",
-    "start": "webpack-dev-server --hot --inline --colors --progress "
+    "start": "webpack-dev-server --hot --inline --colors --progress ",
+    "watch": "node-sass css/ -o css/ --watch --recursive"
   },
   "keywords": [],
   "author": "",
