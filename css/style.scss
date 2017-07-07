@@ -2,7 +2,7 @@
   font-family:Blockletter;
   src:url('Blockletter.otf');
 }
-
+ 
 /* Colors */
 
 $lightWhite: #D6D6D6;
@@ -25,13 +25,13 @@ body{
 	
 }
 
+
+
+
 /* Phones  */
 
 @media screen and (min-width: 320px) {
 	#large-display{
-	
-
-	
 	height:100vh;
 	padding:0;
 		#parallax-base {
@@ -636,15 +636,18 @@ body{
 	}
 }
 
-
+  /* Take a look over here, Tony FICO
+     This is where I start the css version of parallax. 
+    
+	*/
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
 	#large-display{
-	perspective:1px;
+	perspective:1px; /* Needed for parallax*
 	overflow-x:hidden;
 	overflow-y:auto;
-	transform-style:preserve-3d;
+	transform-style:preserve-3d; /* Needed for parallax */
 	height:100vh;
 	padding:0;
 		#parallax-base {
@@ -669,7 +672,7 @@ body{
 						position:fixed;
 						top:0;
 						display:block;
-						transform:translateY(908px) translateX(-852px)translateZ(-1px) scale(2);
+						transform:translateY(908px) translateX(-852px)translateZ(-1px) scale(2); /* Definitely needed for parallax */ 
 					}
 				}
 				#main-logo{
