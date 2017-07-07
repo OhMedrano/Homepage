@@ -30,7 +30,7 @@ function preloadPics(picURL,callback){
 			img.onerror = function() {
 
 			};
-			img.onabout = function() {
+			img.onabout = function() { 
 
 			};
 
